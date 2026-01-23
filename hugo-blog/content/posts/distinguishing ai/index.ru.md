@@ -1,5 +1,5 @@
 ---
-title: "Различение AI"
+title: "Как распознать ИИ контент"
 date: 2026-01-14
 slug: "distinguishing-ai-content"
 ---
