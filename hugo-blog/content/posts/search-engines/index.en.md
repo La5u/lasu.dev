@@ -2,7 +2,11 @@
 title: "Search Engines"
 date: 2026-01-14
 slug: "search-engines"
-description: "my recommendations for search engines"
+description: "Search engine recommendations focused on privacy, relevance, and self-hosted alternatives."
+tags:
+  - search
+  - privacy
+  - tools
 ---
 Google has AI results, tracking, and advertisements. It's time to switch to an alternatives:
 ### Paid Search Engines:

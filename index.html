@@ -1,122 +1,150 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi!</title>
+    <title>Lasu Shin | Programmer</title>
+    <meta name="description" content="Lasu Shin is a programmer building browser extensions, static websites, small web apps, and productivity tools.">
+    <meta name="author" content="Lasu Shin">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://lasu.dev/">
+    <meta property="og:title" content="Lasu Shin | Programmer">
+    <meta property="og:description" content="Projects and writing by Lasu Shin, including browser extensions, websites, and small web tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lasu.dev/">
+    <meta property="og:site_name" content="lasu.dev">
+    <meta property="og:image" content="https://lasu.dev/favicon.png">
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Lasu Shin",
+            "url": "https://lasu.dev/",
+            "jobTitle": "Programmer",
+            "sameAs": [
+                "https://github.com/la5u",
+                "https://linkedin.com/in/lasushin",
+                "https://t.me/lasushin"
+            ]
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="container">
+    <main class="container">
         <header>
             <h1 id="name" class="random-font">Lasu Shin</h1>
             <p class="subtitle">Programmer</p>
-            <p>Hi! I like to create things! :)</p>
+            <p>Hi! I like to create things! :)<br>
+          Here's my <a href="blog">blog</a> and <a href="recommendations">tips</a>.</p>
 
         </header>
 
+        <section aria-labelledby="projects">
         <h2 id="projects">Projects</h2>
 
         <div class="project-grid">
-            <div class="project-card">
-                <img src="https://addons.mozilla.org/user-media/addon_icons/2953/2953538-64.png">
+            <article class="project-card">
+                <img src="rsc.png" alt="Right-Side-Comments extension icon" loading="lazy" decoding="async">
                 <h3>Right-Side-Comments</h3>
                 <p>An extension for putting youtube comments in place of recommendations.</p>
                 <div class="project-links">
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/youtube-comments-sidebar/" target="_blank">Firefox</a>
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/right-side-comments/" target="_blank" rel="noreferrer">Firefox</a>
 
-                    <a href="https://chromewebstore.google.com/detail/right-side-commments/dbbdaiekbopmfbjdchgggfeabapnacnh">Chromium</a>
-                    <a class="github-link" data-repo="Right-Side-Comments" target="_blank"></a>
+                    <a href="https://chromewebstore.google.com/detail/right-side-commments/dbbdaiekbopmfbjdchgggfeabapnacnh" target="_blank" rel="noreferrer">Chromium</a>
+                    <a class="github-link" data-repo="Right-Side-Comments" target="_blank" rel="noreferrer" aria-label="Right-Side-Comments GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="favicon.png">
+            </article>
+            <article class="project-card">
+                <img src="favicon.png" alt="lasu.dev website icon" loading="lazy" decoding="async">
                 <h3>This website</h3>
-                <p>Free hosting using GitHub Pages, only uses html, css and js</p>
+                <p>Hosted on Cloudflare Pages, only uses html, css and js</p>
                 <div class="project-links">
-                    <a class="github-link" data-repo="lasu.dev" target="_blank"></a>
+                    <a class="github-link" data-repo="lasu.dev" target="_blank" rel="noreferrer" aria-label="lasu.dev GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="https://fongfoundation.org/favicon.ico">
+            </article>
+            <article class="project-card">
+                <img src="https://fongfoundation.org/favicon.ico" alt="Fong Foundation website icon" loading="lazy" decoding="async">
                 <h3>Fong Foundation website</h3>
 
                 <p>A static website for a non-profit organization, hosted using Cloudflare pages</p>
                 <div class="project-links">
-                    <a href="https://fongfoundation.org">Live</a>
+                    <a href="https://fongfoundation.org" target="_blank" rel="noreferrer">Live</a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="space.png">
+            </article>
+            <article class="project-card">
+                <img src="space.png" alt="Asteroids Game screenshot" loading="lazy" decoding="async">
                 <h3>Asteroids Game</h3>
                 <p>Shoot down asteroids before you explode!!</p>
                 <div class="project-links">
-                    <a href="https://la5u.github.io/asteroids">PLAY</a>
-                    <a class="github-link" data-repo="asteroids" target="_blank"></a>
+                    <a href="https://la5u.github.io/asteroids" target="_blank" rel="noreferrer">PLAY</a>
+                    <a class="github-link" data-repo="asteroids" target="_blank" rel="noreferrer" aria-label="Asteroids Game GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="windows.png">
+            </article>
+            <article class="project-card">
+                <img src="windows.png" alt="Windows Debloaters icon" loading="lazy" decoding="async">
                 <h3>Windows Debloaters</h3>
                 <p>A compilation of windows enhancers</p>
                 <div class="project-links">
-                    <a href="https://la5u.github.io/windows-debloaters">SEE</a>
-                    <a class="github-link" data-repo="windows-debloaters" target="_blank"></a>
+                    <a href="https://la5u.github.io/windows-debloaters" target="_blank" rel="noreferrer">SEE</a>
+                    <a class="github-link" data-repo="windows-debloaters" target="_blank" rel="noreferrer" aria-label="Windows Debloaters GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-card">
-                <img src="moodle.png">
+            <article class="project-card">
+                <img src="moodle.png" alt="Moodle Quiz Shortcuts icon" loading="lazy" decoding="async">
                 <h3>Moodle Quiz Shortcuts</h3>
                 <p>Keyboard shortcuts for Moodle quizzes</p>
                 <div class="project-links">
-                    <a href="https://greasyfork.org/en/scripts/524310-moodle-quiz-shorcuts" target="_blank">GreasyFork</a>
-                    <a class="github-link" data-repo="Moodle-Quiz-Shortcuts" target="_blank"></a>
+                    <a href="https://greasyfork.org/en/scripts/524310-moodle-quiz-shorcuts" target="_blank" rel="noreferrer">GreasyFork</a>
+                    <a class="github-link" data-repo="Moodle-Quiz-Shortcuts" target="_blank" rel="noreferrer" aria-label="Moodle Quiz Shortcuts GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
-            <div class="project-card">
+            </article>
+            <article class="project-card">
                 <h3>Grades Tracker</h3>
                 <p>Graph your grades from OutOf7 with grade boundaries</p>
                 <div class="project-links">
-                    <a href="https://la5u.github.io/oo7_grades">Live</a>
-                    <a class="github-link" data-repo="oo7_grades" target="_blank"></a>
+                    <a href="https://la5u.github.io/oo7_grades" target="_blank" rel="noreferrer">Live</a>
+                    <a class="github-link" data-repo="oo7_grades" target="_blank" rel="noreferrer" aria-label="Grades Tracker GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </div>
-            <div class="project-card">
+            </article>
+            <article class="project-card">
                 <h3>OCR from Clipboard</h3>
                 <p>Extract text from clipboard images using tesseract OCR</p>
                 <div class="project-links">
-                    <a href="https://gist.github.com/La5u/edfdfd0ae54f1cbd57301c56dee2b7c9" target="_blank">Gist</a>
+                    <a href="https://gist.github.com/La5u/edfdfd0ae54f1cbd57301c56dee2b7c9" target="_blank" rel="noreferrer">Gist</a>
                 </div>
-            </div>
+            </article>
         </div>
+        </section>
 
-    </div>
+    </main>
     <footer>
         <p class="copyright">© Lasu Shin 2026</p>
         <nav class="social-links">
 
-            <a href="mailto:lasushin@proton.me" target="_blank" class="social-icon">
+            <a href="mailto:lasushin@proton.me" target="_blank" rel="noreferrer" class="social-icon" aria-label="Email Lasu Shin">
                 <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://github.com/la5u" target="_blank" class="social-icon">
+            <a href="https://github.com/la5u" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="blog">blog</a>
-            <a href="https://linkedin.com/in/lasushin" target="_blank" class="social-icon">
+            <a href="https://linkedin.com/in/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://t.me/lasushin" target="_blank" class="social-icon">
+            <a href="https://t.me/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on Telegram">
                 <i class="fab fa-telegram"></i>
             </a>
 
         </nav>
 
     </footer>
-    <script src="app.js"></script>
+    <script defer src="particles-config.js"></script>
+    <script defer src="app.js"></script>
 </body>
 </html>

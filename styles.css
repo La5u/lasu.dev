@@ -5,6 +5,10 @@
     scrollbar-width: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     line-height: 1.6;
@@ -15,8 +19,6 @@ body {
 .container {
     margin: 0 auto;
     display: grid;
-    flex-direction: column;
-    align-items: center;
 }
 
 header {
@@ -25,9 +27,12 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    justify-content: center;
     color: white;
     z-index: 10;
+}
+header a{
+  color: cyan;
+  text-decoration: none;
 }
 
 h1 {
@@ -67,10 +72,6 @@ h2 {
     width: 300px;
 }
 
-img {
-    height: 50px !important;
-}
-
 .project-card:hover {
     transform: translateY(-5px);
 }
@@ -98,6 +99,9 @@ img {
 }
 
 .project-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
     margin-bottom: 1rem;
 }
 
@@ -117,20 +121,12 @@ a.github-link {
     background-position: center;
     transition: transform 0.2s ease;
 }
-a.github-link:hover {
-    color: gray;
-}
 
 footer {
     margin-top: 1.5rem;
     padding: 0.5rem;
     text-align: center;
 
-}
-footer a{
-    text-decoration: none;
-    color: white;
-    font-size:1.2rem;
 }
 
 .social-links {
@@ -150,4 +146,146 @@ footer a{
 
 .social-icon:hover {
     color: gray;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body.recommendations-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(0, 255, 255, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 191, 255, 0.08), transparent 22%),
+        #050505;
+}
+
+.recommendations-shell {
+    width: min(920px, calc(100vw - 2rem));
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+}
+
+.recommendations-nav {
+    border-bottom: 1px solid #16343a;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+.recommendations-nav-inner {
+    width: min(920px, calc(100vw - 2rem));
+    margin: 0 auto;
+}
+
+.recommendations-nav-links {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.recommendations-nav a {
+    color: #d6f7ff;
+    text-decoration: none;
+}
+
+.recommendations-nav a:hover,
+.recommendations-nav a.active {
+    color: #fff;
+}
+
+.recommendations-hero {
+    margin-bottom: 2rem;
+}
+
+.recommendations-hero h1 {
+    margin-bottom: 0.75rem;
+}
+
+.recommendations-hero p,
+.recommendations-hero a {
+    color: #c6fbff;
+}
+
+.recommendation-section {
+    margin-bottom: 2rem;
+    padding: 1.25rem 1.25rem 1rem;
+    border: 1px solid #16343a;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.recommendation-section h2 {
+    margin: 0 0 1rem;
+    text-align: left;
+}
+
+.recommendation-list {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.recommendation-list li {
+    margin-bottom: 0.85rem;
+}
+
+.recommendation-note {
+    color: #9ec7cc;
+}
+
+.store-links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.store-link,
+.store-link-disabled {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.85rem;
+    height: 1.85rem;
+    border: 1px solid #23444b;
+    color: #7fe7ff;
+    text-decoration: none;
+}
+
+.store-link:hover {
+    color: #fff;
+    border-color: #7fe7ff;
+}
+
+.store-link-disabled {
+    color: #43666d;
+    border-color: #1a2a2e;
+    cursor: not-allowed;
+}
+
+.paid-marker {
+    color: #5cff8d;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .recommendations-shell {
+        width: min(920px, calc(100vw - 1.25rem));
+        padding-top: 1.5rem;
+    }
+
+    .recommendation-section {
+        padding: 1rem 1rem 0.8rem;
+    }
 }

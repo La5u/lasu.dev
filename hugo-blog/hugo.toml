@@ -1,9 +1,13 @@
-baseURL = "/blog/"
+baseURL = "https://lasu.dev/blog/"
 publishDir = "../blog"
+cleanDestinationDir = true
 title = "Blog"
 timeZone = "Asia/Almaty"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+[params]
+  author = "Lasu Shin"
+  description = "Articles by Lasu Shin about productivity, technology, health, and digital habits."
 [languages]
   [languages.en]
     languageName = "English"

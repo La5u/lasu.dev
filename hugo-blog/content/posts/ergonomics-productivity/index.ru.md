@@ -2,6 +2,15 @@
 title: "Как плохая эргономика снижает вашу продуктивность"
 date: 2026-01-23
 slug: "how-ergonomics-affects-productivity"
+description: "Плохая осанка и неудачная эргономика рабочего места снижают продуктивность и вредят здоровью."
+tags:
+  - ergonomics
+  - productivity
+  - health
+sources:
+  - https://www.researchgate.net/publication/305853040_Knowledge_and_Practice_of_Laptop_Ergonomics_and_Prevalence_of_Musculoskeletal_Symptoms_among_University_Students
+  - https://elitespinecentres.com/blog/how-posture-affects-productivity-the-hidden-link-to-workplace-success/
+  - https://purecalculators.com/ru/desk-height-calculator
 ---
 
 ### Как плохая эргономика снижает вашу продуктивность
@@ -15,8 +24,3 @@ slug: "how-ergonomics-affects-productivity"
 Также лучше совместить с упражнениями: подбородок назад (chin tucks), сведение лопаток, растяжка грудных, лёгкое разгибание спины стоя, круги плечами и повороты шеи. Ещё лучше сочетать это с растяжкой, спортом и регулярными перерывами.
 
 Исправить эргономику — лёгкий способ улучшить продуктивность и здоровье.
-
-https://www.researchgate.net/publication/305853040_Knowledge_and_Practice_of_Laptop_Ergonomics_and_Prevalence_of_Musculoskeletal_Symptoms_among_University_Students
-https://elitespinecentres.com/blog/how-posture-affects-productivity-the-hidden-link-to-workplace-success/
-https://purecalculators.com/ru/desk-height-calculator
-

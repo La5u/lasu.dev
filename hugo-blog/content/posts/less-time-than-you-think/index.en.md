@@ -3,6 +3,13 @@ title: "You Have Less Time Than You Think."
 date: 2026-01-18
 slug: "you-don't-have-much-time"
 description: "Your perception of time speeds up as you age"
+tags:
+  - time
+  - productivity
+  - psychology
+  - long
+sources:
+  - https://moika78.ru/news/2022-11-22/829859-pochemu-s-vozrastom-cheloveku-kazhetsya-chto-vremya-nachinaet-idti-bystree/
 ---
 
 ![Hourglass](sandwatch.jpg)
@@ -40,4 +47,4 @@ If you want to take back control of your time, you need to start now. Write down
 
 Write down where your time goes — and decide where you want to spend it instead.
 
-(Translated from russian post)
+_Auto-translated from the original Russian post._

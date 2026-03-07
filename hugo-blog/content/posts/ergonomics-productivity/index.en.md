@@ -2,6 +2,15 @@
 title: "How Ergonomics Affects Productivity"
 date: 2026-01-23
 slug: "how-ergonomics-affects-productivity"
+description: "Poor posture and bad desk ergonomics can reduce productivity and increase musculoskeletal strain."
+tags:
+  - ergonomics
+  - productivity
+  - health
+sources:
+  - https://www.researchgate.net/publication/305853040_Knowledge_and_Practice_of_Laptop_Ergonomics_and_Prevalence_of_Musculoskeletal_Symptoms_among_University_Students
+  - https://elitespinecentres.com/blog/how-posture-affects-productivity-the-hidden-link-to-workplace-success/
+  - https://purecalculators.com/ru/desk-height-calculator
 ---
 
 ### How Poor Ergonomics Reduces Your Productivity
@@ -16,9 +25,3 @@ Place your feet flat on the floor, and keep your knees at roughly a 90–110° a
 It also helps to add simple exercises: chin tucks, shoulder blade squeezes, chest stretches, gentle standing back extensions, shoulder circles, and neck rotations. Even better: combine this with stretching, regular exercise, and frequent breaks.
 
 Fixing your ergonomics is an easy way to improve both productivity and health.
-
-
-https://www.researchgate.net/publication/305853040_Knowledge_and_Practice_of_Laptop_Ergonomics_and_Prevalence_of_Musculoskeletal_Symptoms_among_University_Students
-https://elitespinecentres.com/blog/how-posture-affects-productivity-the-hidden-link-to-workplace-success/
-https://purecalculators.com/ru/desk-height-calculator
-

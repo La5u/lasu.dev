@@ -2,11 +2,26 @@
   <section class="postpage">
     <article class="article">
       <h1 class="h1">{{ .Title }}</h1>
-      <p class="meta">{{ .Date.Format "January 2, 2006" }} {{ with .Params.author }}&middot; {{ . }}{{ end }}</p>
+      <p class="meta">{{ .Date | time.Format ":date_long" }}</p>
+      {{ with .Params.tags }}
+        <p class="taglist">
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        </p>
+      {{ end }}
 
       <div class="prose">
         {{ .Content }}
       </div>
+      {{ with .Params.sources }}
+        <section class="sources">
+          <h2>{{ if eq $.Site.Language.Lang "ru" }}Источники{{ else }}Sources{{ end }}</h2>
+          <ul>
+            {{ range . }}
+              <li><a href="{{ . }}">{{ . }}</a></li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
     </article>
   </section>
 {{ end }}

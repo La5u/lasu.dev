@@ -1,13 +1,86 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
+  {{ $author := or .Site.Params.author "Lasu Shin" }}
+  {{ $pageTitle := "" }}
+  {{ if .IsHome }}
+    {{ $pageTitle = printf "%s | %s" .Site.Title $author }}
+  {{ else }}
+    {{ $pageTitle = printf "%s | %s" .Title .Site.Title }}
+  {{ end }}
+  {{ $description := or .Site.Params.description "Articles by Lasu Shin." }}
+  {{ with .Description }}
+    {{ $description = . | plainify | htmlUnescape | truncate 160 }}
+  {{ else }}
+    {{ if .IsPage }}
+      {{ with .Summary }}
+        {{ $description = . | plainify | htmlUnescape | truncate 160 }}
+      {{ end }}
+    {{ else if not .IsHome }}
+      {{ $description = printf "%s on %s." .Title .Site.Title }}
+    {{ end }}
+  {{ end }}
+  {{ $ogType := "website" }}
+  {{ if .IsPage }}{{ $ogType = "article" }}{{ end }}
+  {{ $shareImage := "https://lasu.dev/favicon.png" }}
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ if .IsHome }}Blog{{ else }}{{ .Title }} · Blog{{ end }}</title>
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="description" content="{{ $description }}" />
+    <meta name="author" content="{{ $author }}" />
+    <title>{{ $pageTitle }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta property="og:title" content="{{ $pageTitle }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:type" content="{{ $ogType }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:image" content="{{ $shareImage }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ $pageTitle }}" />
+    <meta name="twitter:description" content="{{ $description }}" />
+    <meta name="twitter:image" content="{{ $shareImage }}" />
+    {{ if .IsPage }}
+      <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+      <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+    {{ end }}
+    {{ if .IsTranslated }}
+      {{ range .AllTranslations }}
+        <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+      {{ end }}
+    {{ end }}
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
+    {{ if .IsPage }}
+      <script type="application/ld+json">
+        {{ dict
+          "@context" "https://schema.org"
+          "@type" "BlogPosting"
+          "headline" .Title
+          "description" $description
+          "url" .Permalink
+          "mainEntityOfPage" .Permalink
+          "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+          "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+          "author" (dict "@type" "Person" "name" $author)
+          "publisher" (dict "@type" "Person" "name" $author "url" "https://lasu.dev/")
+        | jsonify | safeHTML }}
+      </script>
+    {{ else if .IsHome }}
+      <script type="application/ld+json">
+        {{ dict
+          "@context" "https://schema.org"
+          "@type" "Blog"
+          "name" .Site.Title
+          "description" $description
+          "url" .Permalink
+          "publisher" (dict "@type" "Person" "name" $author "url" "https://lasu.dev/")
+        | jsonify | safeHTML }}
+      </script>
+    {{ end }}
   </head>
 
   <body class="bg">
@@ -15,6 +88,23 @@
     <main class="container">
       {{ block "main" . }}{{ end }}
     </main>
+    <footer class="site-footer">
+      <p class="copyright">© Lasu Shin 2026</p>
+      <nav class="social-links">
+        <a href="mailto:lasushin@proton.me" target="_blank" rel="noreferrer" class="social-icon" aria-label="Email Lasu Shin">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/la5u" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://t.me/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on Telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </nav>
+    </footer>
     <script src="{{ "blog.js" | relURL }}"></script>
   </body>
 </html>

@@ -2,32 +2,41 @@
   <div class="page">
     <h1 class="h1">Blog</h1>
 
-    {{/* Collect unique categories from posts */}}
+    {{/* Collect unique filter terms from categories and tags */}}
     {{ $posts := where .Site.RegularPages "Section" "posts" }}
-    {{ $cats := slice }}
+    {{ $filters := slice }}
     {{ range $posts }}
       {{ range .Params.categories }}
-        {{ $cats = $cats | append . }}
+        {{ $filters = $filters | append . }}
+      {{ end }}
+      {{ range .Params.tags }}
+        {{ $filters = $filters | append . }}
       {{ end }}
     {{ end }}
-    {{ $cats = uniq $cats | sort }}
+    {{ $filters = uniq $filters | sort }}
 
     <ul class="cats">
-      <li><button class="cat-btn is-active" data-category="all">All</button></li>
-      {{ range $cats }}
-        <li><button class="cat-btn" data-category="{{ . }}">{{ . }}</button></li>
+      <li><button class="cat-btn is-active" data-filter="all">All</button></li>
+      {{ range $filters }}
+        <li><button class="cat-btn" data-filter="{{ . }}">{{ . }}</button></li>
       {{ end }}
     </ul>
 
     <ul class="posts" id="posts-list">
       {{ range $posts.ByDate.Reverse }}
-        {{ $cat := "" }}
-        {{ with index .Params.categories 0 }}{{ $cat = . }}{{ end }}
-        <li data-category="{{ $cat }}">
+        {{ $terms := slice }}
+        {{ range .Params.categories }}{{ $terms = $terms | append . }}{{ end }}
+        {{ range .Params.tags }}{{ $terms = $terms | append . }}{{ end }}
+        <li data-filters="{{ delimit $terms "|" }}">
           <a class="postlink" href="{{ .RelPermalink }}">
             <h2 class="h2">{{ .Title }}</h2>
             {{ with .Params.description }}<p class="desc">{{ . }}</p>{{ end }}
-            <p class="meta">{{ .Date.Format "January 2, 2006" }} &middot; {{ with .Params.author }}{{ . }}{{ end }}</p>
+            <p class="meta">{{ .Date | time.Format ":date_long" }}</p>
+            {{ with .Params.tags }}
+              <p class="taglist">
+                {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+              </p>
+            {{ end }}
           </a>
         </li>
       {{ end }}

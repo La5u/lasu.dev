@@ -3,6 +3,13 @@ title: "У вас осталось меньше времени, чем вам к
 date: 2026-01-18
 slug: "you-don't-have-much-time"
 description: "Ваше ощущение времени ускоряется с возрастом"
+tags:
+  - time
+  - productivity
+  - psychology
+  - long
+sources:
+  - https://moika78.ru/news/2022-11-22/829859-pochemu-s-vozrastom-cheloveku-kazhetsya-chto-vremya-nachinaet-idti-bystree/
 ---
 
 ![Песчаный часы](sandwatch.jpg)
