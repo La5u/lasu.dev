@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Right Side Comments</title>
+  <meta
+    name="description"
+    content="Move YouTube comments to the right side with quick toggles for recommended videos, scrollbar visibility, compact layout, and a persistent comment box."
+  />
+  <link rel="icon" type="image/png" href="./assets/icon128.png" />
+  <link rel="apple-touch-icon" href="./assets/icon128.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+  <body>
+  <header class="banner">
+    <img src="./assets/icon128.png" alt="Right Side Comments icon" class="logo" />
+    <h1>Right Side Comments</h1>
+    <p class="version"><span id="version">loading...</span></p>
+  </header>
+
+  <main class="container">
+    
+    
+    <div class="actions">
+      <a href="https://chromewebstore.google.com/detail/right-side-commments/dbbdaiekbopmfbjdchgggfeabapnacnh" target="_blank" rel="noopener noreferrer" aria-label="Install from Chrome Web Store">
+        <img class="browser-icon-img" src="https://cdn.simpleicons.org/googlechrome" alt="" aria-hidden="true" />
+        <span>Chrome</span>
+      </a>
+      <a href="https://microsoftedge.microsoft.com/addons/detail/ijamadlnojogehkdlgpgmhohcffpofld" target="_blank" rel="noopener noreferrer" aria-label="Install from Microsoft Edge Add-ons">
+        <img class="browser-icon-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/250px-Microsoft_Edge_logo_%282019%29.svg.png" alt="" aria-hidden="true" />
+        <span>Edge</span>
+      </a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/right-side-comments/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
+        <img class="browser-icon-img" src="https://cdn.simpleicons.org/firefoxbrowser" alt="" aria-hidden="true" />
+        <span>Firefox</span>
+      </a>
+      <a href="https://github.com/La5u/Right-Side-Comments" target="_blank" rel="noopener noreferrer">
+        <img class="browser-icon-img" src="https://simpleicons.org/icons/github.svg" alt="" aria-hidden="true"/> 
+        <span>GitHub</span>
+      </a>
+    </div>
+    <p class="lead">Move comments to the right side and keep your watch page clean.</p>
+
+
+    <section>
+      <h2>Controls</h2>
+      <ul>
+        <li>Sidebar toggle</li>
+        <li>Expand description</li>
+        <li>Show recommended</li>
+        <li>Show scrollbar</li>
+        <li>Compact comments</li>
+        <li>Persistent comment box</li>
+      </ul>
+      <p>To access these settings, click the puzzle icon in the browser's toolbar and then the extension. You can also pin it for easier access.</p>
+      <h2>Shortcuts</h2>
+      <ul>
+        <li>Windows: Ctrl+Shift+Y</li>
+        <li>Linux: Ctrl+Shift+U</li>
+        <li>Mac: Cmd+Shift+Y</li>
+      </ul>
+    </section>
+    
+
+    <section class="shots">
+      <img src="./assets/images/comments.png" alt="Comments on the right" />
+      <img src="./assets/images/popup.png" alt="Popup controls" />
+    </section>
+  </main>
+
+  <footer>
+    <small>Right Side Comments • <span id="year"></span></small>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    fetch('https://api.github.com/repos/La5u/Right-Side-Comments/releases/latest')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(d => document.getElementById('version').textContent = d.tag_name)
+      .catch(() => document.getElementById('version').textContent = 'latest');
+  </script>
+</body>
+</html>
