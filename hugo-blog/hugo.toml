@@ -5,6 +5,7 @@ title = "Blog"
 timeZone = "Asia/Almaty"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+enableGitInfo = true
 [params]
   author = "Lasu Shin"
   description = "Articles by Lasu Shin about productivity, technology, health, and digital habits."

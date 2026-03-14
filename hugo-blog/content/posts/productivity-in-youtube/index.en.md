@@ -13,7 +13,6 @@ sources:
   - https://sponsor.ajay.app/
   - https://ublockorigin.com/
 ---
-_Auto-translated from the original Russian post._
 
 Have you ever gotten stuck on YouTube longer than you intended? If you want to use the platform more productively, a few extensions can help a lot.
 

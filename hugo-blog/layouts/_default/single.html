@@ -2,7 +2,12 @@
   <section class="postpage">
     <article class="article">
       <h1 class="h1">{{ .Title }}</h1>
-      <p class="meta">{{ .Date | time.Format ":date_long" }}</p>
+      <p class="meta">
+        {{ .Date | time.Format ":date_long" }}
+        {{ if and .Lastmod .Lastmod.After .Date }}
+          · {{ if eq $.Site.Language.Lang "ru" }}Обновлено{{ else }}Updated{{ end }} {{ .Lastmod | time.Format ":date_long" }}
+        {{ end }}
+      </p>
       {{ with .Params.tags }}
         <p class="taglist">
           {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
