@@ -6,9 +6,9 @@
   <title>Right Side Comments</title>
   <meta
     name="description"
-    content="Move YouTube comments to the right side with quick toggles for recommended videos, scrollbar visibility, compact layout, and a persistent comment box."
-  />
-  <link rel="icon" type="image/png" href="./assets/icon128.png" />
+    content="Experimental: Move YouTube comments to the right side with quick toggles for recommended videos, scrollbar visibility, compact layout, and a persistent comment box."
+    />
+  <link rel="icon" type="image/png" href="./assets/icon.png" />
   <link rel="apple-touch-icon" href="./assets/icon128.png" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -20,8 +20,6 @@
   </header>
 
   <main class="container">
-    
-    
     <div class="actions">
       <a href="https://chromewebstore.google.com/detail/right-side-commments/dbbdaiekbopmfbjdchgggfeabapnacnh" target="_blank" rel="noopener noreferrer" aria-label="Install from Chrome Web Store">
         <img class="browser-icon-img" src="https://cdn.simpleicons.org/googlechrome" alt="" aria-hidden="true" />
@@ -40,32 +38,37 @@
         <span>GitHub</span>
       </a>
     </div>
-    <p class="lead">Move comments to the right side and keep your watch page clean.</p>
 
+    <section class="shots">
+      <img src="./assets/images/light_mode_layout.png" width="400" height="250" alt="Light mode layout" />
+      <img src="./assets/images/dark_mode_layout.png" width="400" height="250" alt="Dark mode layout" />
+      <img src="./assets/images/popup.png" width="150" height="266" alt="Popup controls" />
+    </section>
 
     <section>
-      <h2>Controls</h2>
+      <h2>Behaviour Controls</h2>
       <ul>
-        <li>Sidebar toggle</li>
-        <li>Expand description</li>
-        <li>Show recommended</li>
-        <li>Show scrollbar</li>
-        <li>Compact comments</li>
-        <li>Persistent comment box</li>
+        <li><strong>Sidebar</strong> — Turn right-side comments on/off</li>
+        <li><strong>Expand description</strong> — Expand when sidebar mode is enabled; collapse when disabled</li>
+        <li><strong>Related videos</strong> — Show or hide related videos</li>
       </ul>
-      <p>To access these settings, click the puzzle icon in the browser's toolbar and then the extension. You can also pin it for easier access.</p>
+      <h2>UI Controls</h2>
+      <ul>
+        <li><strong>Hide scrollbar</strong> — Hide scrollbars. Supports inner (comments section) and outer (entire sidebar) scrollbars separately</li>
+        <li><strong>Compact comments</strong> — Tighter comment spacing</li>
+        <li><strong>Static comment box</strong> — Keeps a fixed container in place while comments load, preventing UI layout shifts</li>
+      </ul>
+      <h2>Experimental Controls</h2>
+      <ul>
+        <li><strong>Comments width</strong> — Adjust the width of the comments sidebar (15-40%)</li>
+        <li><strong>Hide side margins</strong> — Remove spacing on the left and right sides of the video</li>
+      </ul>
       <h2>Shortcuts</h2>
       <ul>
         <li>Windows: Ctrl+Shift+Y</li>
         <li>Linux: Ctrl+Shift+U</li>
-        <li>Mac: Cmd+Shift+Y</li>
+        <li>macOS: Cmd+Shift+Y</li>
       </ul>
-    </section>
-    
-
-    <section class="shots">
-      <img src="./assets/images/comments.png" alt="Comments on the right" />
-      <img src="./assets/images/popup.png" alt="Popup controls" />
     </section>
   </main>
 

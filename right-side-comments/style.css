@@ -1,5 +1,8 @@
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
 }
 
 body {
@@ -44,18 +47,10 @@ h1 {
 
 .version {
   margin: 0;
-
   font-size: 14px;
 }
 
-.lead {
-  margin: 12px 0 0;
-  color: #333;
-  max-width: 560px;
-}
-
 .actions {
-  margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -70,15 +65,13 @@ h1 {
   color: #111;
   font-weight: 600;
   background: #fff;
-  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+  transition: transform 0.16s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
 .actions a:hover {
-  border-color: #c80000;
-  color: #c80000;
   transform: translateY(-1px);
 }
 
@@ -94,7 +87,7 @@ section {
 }
 
 h2 {
-  margin: 0 0 10px;
+  margin: 28px 0 10px;
   font-size: 18px;
 }
 
@@ -105,18 +98,17 @@ ul {
   line-height: 1.65;
 }
 
-.shots {
-  justify-content:center;
+section.shots {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
 }
 
-.shots img {
-  max-width: 100%;
-  border: 1px solid #c80000;
+section.shots img {
   border-radius: 10px;
- 
 }
+
 
 footer {
   text-align: center;
