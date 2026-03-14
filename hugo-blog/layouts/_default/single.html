@@ -4,7 +4,7 @@
       <h1 class="h1">{{ .Title }}</h1>
       <p class="meta">
         {{ .Date | time.Format ":date_long" }}
-        {{ if and .Lastmod .Lastmod.After .Date }}
+        {{ if and .Lastmod (gt .Lastmod.Unix .Date.Unix) }}
           · {{ if eq $.Site.Language.Lang "ru" }}Обновлено{{ else }}Updated{{ end }} {{ .Lastmod | time.Format ":date_long" }}
         {{ end }}
       </p>
