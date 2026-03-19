@@ -105,6 +105,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.invert-icon {
+    filter: invert(1);
+}
+
 #particles-js {
     z-index: 0;
     position: relative;
