@@ -6,7 +6,7 @@
   <title>Right Side Comments</title>
   <meta
     name="description"
-    content="Experimental: Move YouTube comments to the right side with quick toggles for recommended videos, scrollbar visibility, compact layout, and a persistent comment box."
+    content="Move YouTube comments to the right sidebar on watch pages. Includes layout and popup screenshots, settings, defaults, and known issues."
     />
   <link rel="icon" type="image/png" href="./assets/icon.png" />
   <link rel="apple-touch-icon" href="./assets/icon128.png" />
@@ -42,37 +42,57 @@
     <section class="shots">
       <img src="./assets/images/light_mode_layout.png" width="400" height="250" alt="Light mode layout" />
       <img src="./assets/images/dark_mode_layout.png" width="400" height="250" alt="Dark mode layout" />
-      <img src="./assets/images/popup.png" width="150" height="266" alt="Popup controls" />
+    </section>
+
+    <section class="popup-gallery">
+      <h2>Popup</h2>
+      <div class="popup-grid">
+        <img src="./assets/images/light_mode.png" width="300" height="413" alt="Popup in light mode" />
+        <img src="./assets/images/dark_mode.png" width="300" height="413" alt="Popup in dark mode" />
+        <img src="./assets/images/dark_mode_expanded.png" width="275" height="591" alt="Expanded popup in dark mode" />
+      </div>
     </section>
 
     <section>
-      <p>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
-          https://www.youtube.com/watch?v=dQw4w9WgXcQ
-        </a>
-      </p>
-      <h2>Behaviour Controls</h2>
+      <p>Move YouTube comments to the right sidebar on watch pages.</p>
+      <h2>Behavior</h2>
       <ul>
-        <li><strong>Sidebar</strong> — Turn right-side comments on/off</li>
-        <li><strong>Expand description</strong> — Expand when sidebar mode is enabled; collapse when disabled</li>
-        <li><strong>Related videos</strong> — Show or hide related videos</li>
+        <li><strong>Extension</strong> — Turn the whole extension on or off (Ctrl+Shift+Y).</li>
+        <li><strong>Sidebar</strong> — Choose between the custom right-side comments layout, the built-in panel, or disabled.</li>
+        <li><strong>Expand description</strong> — Expand when the extension is enabled; collapse when disabled.</li>
+        <li><strong>Related videos</strong> — Show or hide related videos.</li>
       </ul>
-      <h2>UI Controls</h2>
+      <h2>UI</h2>
       <ul>
-        <li><strong>Hide scrollbar</strong> — Hide scrollbars. Supports inner (comments section) and outer (entire sidebar) scrollbars separately</li>
-        <li><strong>Compact comments</strong> — Tighter comment spacing</li>
-        <li><strong>Static comment box</strong> — Keeps a fixed container in place while comments load, preventing UI layout shifts</li>
+        <li><strong>Fullscreen comments</strong> — Use YouTube's fullscreen comments button while fullscreen is active.</li>
+        <li><strong>Hide scrollbar</strong> — Hide scrollbars on the comments area. Supports inner (comments section) and outer (entire sidebar) scrollbars separately.</li>
       </ul>
-      <h2>Experimental Controls</h2>
+      <h2>Advanced</h2>
       <ul>
-        <li><strong>Comments width</strong> — Adjust the width of the comments sidebar (15-40%)</li>
-        <li><strong>Hide side margins</strong> — Remove spacing on the left and right sides of the video</li>
+        <li><strong>Comments width</strong> — Adjust the width of the comments area (15-40%) for both <code>Default</code> and <code>Built-in</code> sidebar modes, with a local reset control.</li>
+        <li><strong>Compact comments</strong> — Tighter comment spacing.</li>
+        <li><strong>Static comment box</strong> — Keeps a fixed container in place while comments load, preventing UI layout shifts.</li>
+        <li><strong>Hide side margins</strong> — Remove spacing on the left and right sides of the video.</li>
       </ul>
-      <h2>Shortcuts</h2>
+      <h2>Defaults</h2>
       <ul>
-        <li>Windows: Ctrl+Shift+Y</li>
-        <li>Linux: Ctrl+Shift+U</li>
-        <li>macOS: Cmd+Shift+Y</li>
+        <li><code>extensionEnabled: true</code></li>
+        <li><code>sidebarMode: "default"</code></li>
+        <li><code>autoExpand: true</code></li>
+        <li><code>showRelated: true</code></li>
+        <li><code>innerScrollbar: true</code></li>
+        <li><code>outerScrollbar: false</code></li>
+        <li><code>fullscreenComments: false</code></li>
+        <li><code>compactMargins: true</code></li>
+        <li><code>staticCommentBox: true</code></li>
+        <li><code>commentsWidth: null</code></li>
+        <li><code>hideSideMargins: false</code></li>
+      </ul>
+      <h2>Shortcut</h2>
+      <ul>
+        <li>Windows: <code>Ctrl+Shift+Y</code>.</li>
+        <li>macOS: <code>Command+Shift+Y</code>.</li>
+        <li>Linux: <code>Ctrl+Shift+U</code>.</li>
       </ul>
     </section>
   </main>

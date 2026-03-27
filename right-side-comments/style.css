@@ -99,13 +99,32 @@ ul {
 }
 
 section.shots {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   margin: 24px 0;
 }
 
 section.shots img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.popup-gallery {
+  margin-top: 24px;
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.popup-grid img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
