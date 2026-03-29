@@ -91,6 +91,10 @@ h2 {
   font-size: 18px;
 }
 
+.row-title {
+  margin-bottom: 12px;
+}
+
 ul {
   margin: 0;
   padding-left: 18px;
@@ -111,21 +115,32 @@ section.shots img {
   height: auto;
 }
 
+.single-shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
 .popup-gallery {
   margin-top: 24px;
 }
 
 .popup-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
   margin-top: 12px;
+  align-items: start;
 }
 
 .popup-grid img {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  display: block;
+  transform: scale(0.84);
+  transform-origin: top center;
 }
 
 
