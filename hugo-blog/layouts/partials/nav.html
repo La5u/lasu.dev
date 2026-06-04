@@ -9,10 +9,11 @@
     <div class="nav-lang">
       {{ if .IsTranslated }}
         {{ range .AllTranslations }}
+          {{ $label := or .Language.Params.label .Language.Lang }}
           {{ if eq .Language.Lang $.Site.Language.Lang }}
-            <span class="active">{{ .Language.Label }}</span>
+            <span class="active">{{ $label }}</span>
           {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Language.Label }}</a>
+            <a href="{{ .RelPermalink }}">{{ $label }}</a>
           {{ end }}
         {{ end }}
       {{ end }}

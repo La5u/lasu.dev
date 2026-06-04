@@ -11,12 +11,14 @@ enableGitInfo = true
   description = "Articles by Lasu Shin about productivity, technology, health, and digital habits."
 [languages]
   [languages.en]
-    label = "English"
     weight = 1
+    [languages.en.params]
+      label = "English"
 
   [languages.ru]
-    label = "Русский"
     weight = 2
+    [languages.ru.params]
+      label = "Русский"
 
 
 # IMPORTANT: publish into repo-root /blog
