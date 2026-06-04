@@ -3,15 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearFrame</title>
+  <title>ClearFrame Browser Extension | Highlight Loaded Language</title>
   <meta
     name="description"
-    content="ClearFrame highlights biased or loaded language and shows neutral alternatives."
+    content="ClearFrame is a browser extension that highlights biased, loaded, sensational, or vague language and shows calmer neutral alternatives."
   />
+  <link rel="canonical" href="https://lasu.dev/clearframe/" />
+  <meta property="og:title" content="ClearFrame Browser Extension" />
+  <meta property="og:description" content="Highlight loaded language, framing, hype, hostility, and passive wording with neutral alternatives." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lasu.dev/clearframe/" />
+  <meta property="og:site_name" content="lasu.dev" />
+  <meta property="og:image" content="https://lasu.dev/clearframe.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ClearFrame Browser Extension" />
+  <meta name="twitter:description" content="Highlight biased or loaded language and see neutral alternatives." />
+  <meta name="twitter:image" content="https://lasu.dev/clearframe.png" />
   <meta name="theme-color" content="#000000" />
   <link rel="icon" type="image/png" href="../clearframe.png" />
   <link rel="apple-touch-icon" href="../clearframe.png" />
   <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ClearFrame",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Microsoft Edge, Firefox",
+      "url": "https://lasu.dev/clearframe/",
+      "image": "https://lasu.dev/clearframe.png",
+      "description": "ClearFrame highlights biased, loaded, sensational, or vague language and shows calmer neutral alternatives.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lasu Shin",
+        "url": "https://lasu.dev/"
+      }
+    }
+  </script>
 </head>
 <body>
   <header class="banner">
@@ -21,30 +54,53 @@
   </header>
 
   <main class="container">
+    <nav class="page-nav" aria-label="Page navigation">
+      <a href="../">Lasu Shin</a>
+      <a href="../right-side-comments/">Right Side Comments</a>
+      <a href="../uncensored/">Uncensored YouTube</a>
+    </nav>
+
     <div class="actions">
-      <a href="https://chromewebstore.google.com/detail/clearframe/nkijmgimgocgagenbmgjjchaepjlcked" target="_blank" rel="noopener noreferrer">
-        Chrome
+      <a href="https://chromewebstore.google.com/detail/clearframe/nkijmgimgocgagenbmgjjchaepjlcked" target="_blank" rel="noopener noreferrer" aria-label="Install from Chrome Web Store">
+        <img class="browser-icon-img" src="../assets/browser-icons/chrome.svg" alt="" aria-hidden="true" />
+        <span>Chrome</span>
       </a>
-      <a href="https://addons.mozilla.org/en-US/firefox/addon/clearframe/" target="_blank" rel="noopener noreferrer">
-        Firefox
+      <a href="https://microsoftedge.microsoft.com/addons/detail/clearframe/gjcfmjnafiailjjaliohhllobhmkhidp" target="_blank" rel="noopener noreferrer" aria-label="Install from Microsoft Edge Add-ons">
+        <img class="browser-icon-img" src="../assets/browser-icons/edge.svg" alt="" aria-hidden="true" />
+        <span>Edge</span>
+      </a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/clearframe/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
+        <img class="browser-icon-img" src="../assets/browser-icons/firefox.svg" alt="" aria-hidden="true" />
+        <span>Firefox</span>
       </a>
       <a href="https://github.com/La5u/clearframe" target="_blank" rel="noopener noreferrer">
-        GitHub
+        <img class="browser-icon-img" src="../assets/browser-icons/github.svg" alt="" aria-hidden="true" />
+        <span>GitHub</span>
       </a>
     </div>
 
     <section class="shots">
-      <img src="./test-all-types.png" alt="ClearFrame screenshot" />
+      <img src="./test-all-types.png" alt="ClearFrame browser extension highlighting loaded language categories" />
     </section>
 
     <section class="copy">
-      <p>ClearFrame scans pages progressively, remembers badge counts per URL, and highlights biased or loaded language with neutral alternatives.</p>
-      <p>For build steps, test fixtures, and term types, see GitHub.</p>
+      <p>ClearFrame is a browser extension that helps you notice when writing is trying to steer your reaction. It highlights loaded phrasing, hype, fear, hostility, vague sourcing, passive wording, and other framing choices directly on the page.</p>
+      <p>Hover a highlight to see a calmer alternative, or use the extension popup to choose which types of language you want to track. Each category has its own color, so you can quickly tell whether a sentence is using sensational wording, moral judgment, conflict framing, softened agency, or another pattern.</p>
+      <p>The extension focuses on the visible text in your browser. It does not rewrite the page structure, and the matching terms are bundled into the extension rather than sent somewhere else.</p>
+
+      <h2>What it catches</h2>
+      <ul>
+        <li><strong>Sensationalism</strong> - clickbait, hype, all-caps emphasis, and reveal-style wording.</li>
+        <li><strong>Framing and sourcing</strong> - loaded framing, vague authority, uncertainty, and distancing language.</li>
+        <li><strong>Judgment and hostility</strong> - moral labels, derogatory phrasing, aggression, and conflict-heavy wording.</li>
+        <li><strong>Softening and agency hiding</strong> - euphemisms, passive phrasing, and wording that makes responsibility harder to see.</li>
+        <li><strong>Style and voice</strong> - colloquialisms, idioms, repeated phrasing, and rhetorical questions.</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <small>ClearFrame • Lasu Shin 2026</small>
+    <small>ClearFrame • <a href="../">Lasu Shin</a> 2026</small>
   </footer>
 </body>
 </html>

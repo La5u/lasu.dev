@@ -10,9 +10,9 @@
       {{ if .IsTranslated }}
         {{ range .AllTranslations }}
           {{ if eq .Language.Lang $.Site.Language.Lang }}
-            <span class="active">{{ .Language.LanguageName }}</span>
+            <span class="active">{{ .Language.Label }}</span>
           {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+            <a href="{{ .RelPermalink }}">{{ .Language.Label }}</a>
           {{ end }}
         {{ end }}
       {{ end }}

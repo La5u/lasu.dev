@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: white;
     background-color: black;
@@ -119,10 +119,11 @@ a.github-link {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url('https://github.githubassets.com/favicons/favicon-dark.png');
+    background-image: url('assets/browser-icons/github.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    filter: invert(1);
     transition: transform 0.2s ease;
 }
 

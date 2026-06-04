@@ -11,11 +11,11 @@ enableGitInfo = true
   description = "Articles by Lasu Shin about productivity, technology, health, and digital habits."
 [languages]
   [languages.en]
-    languageName = "English"
+    label = "English"
     weight = 1
 
   [languages.ru]
-    languageName = "Русский"
+    label = "Русский"
     weight = 2
 
 

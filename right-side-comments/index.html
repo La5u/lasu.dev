@@ -3,14 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Right Side Comments</title>
+  <title>Right Side Comments Browser Extension | YouTube Sidebar Comments</title>
   <meta
     name="description"
-    content="Move YouTube comments to the right sidebar on watch pages. Includes layout and popup screenshots, settings, and known issues."
+    content="Right Side Comments is a browser extension that moves YouTube comments to the right sidebar on watch pages, replacing recommendations with the conversation."
     />
+  <link rel="canonical" href="https://lasu.dev/right-side-comments/" />
+  <meta property="og:title" content="Right Side Comments Browser Extension" />
+  <meta property="og:description" content="Move YouTube comments to the right sidebar on watch pages and reduce recommendation distractions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lasu.dev/right-side-comments/" />
+  <meta property="og:site_name" content="lasu.dev" />
+  <meta property="og:image" content="https://lasu.dev/right-side-comments/assets/icon128.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Right Side Comments Browser Extension" />
+  <meta name="twitter:description" content="Move YouTube comments to the right sidebar on watch pages." />
+  <meta name="twitter:image" content="https://lasu.dev/right-side-comments/assets/icon128.png" />
   <link rel="icon" type="image/png" href="./assets/icon.png" />
   <link rel="apple-touch-icon" href="./assets/icon128.png" />
   <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Right Side Comments",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Microsoft Edge, Firefox",
+      "url": "https://lasu.dev/right-side-comments/",
+      "image": "https://lasu.dev/right-side-comments/assets/icon128.png",
+      "description": "Right Side Comments moves YouTube comments to the right sidebar on watch pages.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lasu Shin",
+        "url": "https://lasu.dev/"
+      }
+    }
+  </script>
 </head>
   <body>
   <header class="banner">
@@ -20,21 +53,27 @@
   </header>
 
   <main class="container">
+    <nav class="page-nav" aria-label="Page navigation">
+      <a href="../">Lasu Shin</a>
+      <a href="../clearframe/">ClearFrame</a>
+      <a href="../uncensored/">Uncensored YouTube</a>
+    </nav>
+
     <div class="actions">
       <a href="https://chromewebstore.google.com/detail/right-side-commments/dbbdaiekbopmfbjdchgggfeabapnacnh" target="_blank" rel="noopener noreferrer" aria-label="Install from Chrome Web Store">
-        <img class="browser-icon-img" src="https://cdn.simpleicons.org/googlechrome" alt="" aria-hidden="true" />
+        <img class="browser-icon-img" src="../assets/browser-icons/chrome.svg" alt="" aria-hidden="true" />
         <span>Chrome</span>
       </a>
       <a href="https://microsoftedge.microsoft.com/addons/detail/ijamadlnojogehkdlgpgmhohcffpofld" target="_blank" rel="noopener noreferrer" aria-label="Install from Microsoft Edge Add-ons">
-        <img class="browser-icon-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/250px-Microsoft_Edge_logo_%282019%29.svg.png" alt="" aria-hidden="true" />
+        <img class="browser-icon-img" src="../assets/browser-icons/edge.svg" alt="" aria-hidden="true" />
         <span>Edge</span>
       </a>
       <a href="https://addons.mozilla.org/en-US/firefox/addon/right-side-comments/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
-        <img class="browser-icon-img" src="https://cdn.simpleicons.org/firefoxbrowser" alt="" aria-hidden="true" />
+        <img class="browser-icon-img" src="../assets/browser-icons/firefox.svg" alt="" aria-hidden="true" />
         <span>Firefox</span>
       </a>
       <a href="https://github.com/La5u/Right-Side-Comments" target="_blank" rel="noopener noreferrer">
-        <img class="browser-icon-img" src="https://simpleicons.org/icons/github.svg" alt="" aria-hidden="true"/> 
+        <img class="browser-icon-img" src="../assets/browser-icons/github.svg" alt="" aria-hidden="true" />
         <span>GitHub</span>
       </a>
     </div>
@@ -61,7 +100,7 @@
     </section>
 
     <section>
-      <p>Move YouTube comments to the right sidebar on watch pages.</p>
+      <p>Right Side Comments is a browser extension that moves YouTube comments to the right sidebar on watch pages, so the conversation stays next to the video instead of below it.</p>
       <h2>Behavior</h2>
       <ul>
         <li><strong>Extension</strong> — Turn the whole extension on or off (Ctrl+Shift+Y).</li>
@@ -88,7 +127,7 @@
   </main>
 
   <footer>
-    <small>Lasu Shin • <span id="year"></span></small>
+    <small><a href="../">Lasu Shin</a> • <span id="year"></span></small>
   </footer>
 
   <script src="./script.js"></script>
