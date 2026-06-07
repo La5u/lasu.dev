@@ -24,7 +24,6 @@ body {
   border-radius: 14px;
   display: block;
   margin: 0 auto;
-  filter: invert(1);
 }
 
 h1 {
