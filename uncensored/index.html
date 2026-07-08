@@ -14,13 +14,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lasu.dev/uncensored/" />
   <meta property="og:site_name" content="lasu.dev" />
-  <meta property="og:image" content="https://lasu.dev/assets/uncensored-eye.svg" />
+  <meta property="og:image" content="https://lasu.dev/assets/uncensored.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Uncensored YouTube Browser Extension" />
   <meta name="twitter:description" content="Restore hidden words in YouTube captions so subtitles match what was actually said." />
-  <meta name="twitter:image" content="https://lasu.dev/assets/uncensored-eye.svg" />
+  <meta name="twitter:image" content="https://lasu.dev/assets/uncensored.png" />
   <meta name="theme-color" content="#111111" />
-  <link rel="icon" type="image/svg+xml" href="../assets/uncensored-eye.svg" />
+  <link rel="icon" type="image/svg+xml" href="../assets/uncensored.png" />
   <link rel="apple-touch-icon" href="../favicon.png" />
   <link rel="stylesheet" href="../clearframe/style.css" />
   <script type="application/ld+json">
@@ -31,7 +31,7 @@
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Chrome, Firefox",
       "url": "https://lasu.dev/uncensored/",
-      "image": "https://lasu.dev/assets/uncensored-eye.svg",
+      "image": "https://lasu.dev/assets/uncensored.png",
       "description": "Uncensored YouTube restores hidden words in YouTube captions so subtitles match what was actually said.",
       "offers": {
         "@type": "Offer",
@@ -48,7 +48,7 @@
 </head>
 <body class="uncensored-page">
   <header class="banner">
-    <img src="../assets/uncensored-eye.svg" alt="Uncensored YouTube icon" class="logo" />
+    <img src="../assets/uncensored.png" alt="Uncensored YouTube icon" class="logo" />
     <h1>Uncensored YouTube</h1>
     <p class="version">Restores verbatim YouTube captions when words are hidden</p>
   </header>
@@ -61,6 +61,10 @@
     </nav>
 
     <div class="actions">
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/uncensored/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
+        <img class="browser-icon-img" src="../assets/browser-icons/firefox.svg" alt="" aria-hidden="true" />
+        <span>Firefox</span>
+      </a>
       <a href="https://github.com/La5u/uncensored" target="_blank" rel="noopener noreferrer">
         <img class="browser-icon-img" src="../assets/browser-icons/github.svg" alt="" aria-hidden="true" />
         <span>GitHub</span>
@@ -69,11 +73,10 @@
 
     <section class="copy">
       <p>Uncensored YouTube is a browser extension for people who rely on captions and want YouTube subtitles to match what was actually spoken. When YouTube hides words behind blanks, the extension restores the missing words where it can.</p>
-      <p>The goal is accessibility, not shock value. Censored captions can make videos harder to follow, especially for deaf and hard-of-hearing viewers, because the sentence no longer carries the same meaning.</p>
       <p>Some replacements are obvious from the surrounding sentence. When they are not obvious, the extension can use the audio already being played by YouTube to choose the word that best matches the speech. This happens locally in the browser.</p>
 
       <h2>Status</h2>
-      <p>Uncensored YouTube is not published yet. This page is a short preview while the extension is being prepared for release.</p>
+      <p>Uncensored YouTube is available for Firefox.</p>
     </section>
   </main>
 
