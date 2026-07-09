@@ -6,7 +6,7 @@
     <title>Recommendations</title>
     <meta name="description" content="Books, apps, games, and websites recommended by Lasu Shin.">
     <meta name="author" content="Lasu Shin">
-    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="robots" content="noindex,follow">
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://lasu.dev/recommendations/">
     <meta property="og:title" content="Recommendations | lasu.dev">
@@ -17,15 +17,16 @@
     <meta property="og:image" content="https://lasu.dev/favicon.png">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/assets/site-chrome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body class="recommendations-page">
-    <nav class="recommendations-nav">
-        <div class="recommendations-nav-inner">
-            <div class="recommendations-nav-links">
+    <nav class="site-nav" aria-label="Primary navigation">
+        <div class="site-nav__inner">
+            <div class="site-nav__links">
                 <a href="/">Home</a>
                 <a href="/blog/">Blog</a>
-                <a href="/recommendations/" class="active">Recommendations</a>
+                <a href="/recommendations/" aria-current="page">Recommendations</a>
                 <a href="/#projects">Projects</a>
             </div>
         </div>
@@ -122,7 +123,7 @@
         </section>
     </main>
     <footer class="site-footer">
-        <p class="copyright">© Lasu Shin 2026</p>
+        <p class="copyright">© Lasu Shin <span data-current-year>2026</span></p>
         <nav class="social-links">
             <a href="mailto:lasushin@proton.me" target="_blank" rel="noreferrer" class="social-icon" aria-label="Email Lasu Shin">
                 <i class="fas fa-envelope"></i>
@@ -138,5 +139,6 @@
             </a>
         </nav>
     </footer>
+    <script src="/assets/site-chrome.js"></script>
 </body>
 </html>

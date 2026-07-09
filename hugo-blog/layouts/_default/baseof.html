@@ -88,6 +88,7 @@
     {{ end }}
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/site-chrome.css">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
     {{ if .IsPage }}
       <script type="application/ld+json">
@@ -124,7 +125,7 @@
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer">
-      <p class="copyright">© Lasu Shin 2026</p>
+      <p class="copyright">© Lasu Shin <span data-current-year>2026</span></p>
       <nav class="social-links">
         <a href="mailto:lasushin@proton.me" target="_blank" rel="noreferrer" class="social-icon" aria-label="Email Lasu Shin">
           <i class="fas fa-envelope"></i>
@@ -141,5 +142,6 @@
       </nav>
     </footer>
     <script defer src="{{ "blog.js" | relURL }}"></script>
+    <script defer src="/assets/site-chrome.js"></script>
   </body>
 </html>

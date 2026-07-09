@@ -1,7 +1,7 @@
 :root{
-  --bg:#000;
-  --fg:#f4f4f5;
-  --muted:#a1a1aa;
+  --bg:var(--site-bg, #000);
+  --fg:var(--site-fg, #f4f4f5);
+  --muted:var(--site-muted, #a1a1aa);
   --muted2:#71717a;
   --card:#111827;      /* gray-900-ish */
   --card2:#1f2937;     /* hover */
@@ -25,40 +25,14 @@ body{
   padding: 0 16px;
 }
 
-.nav{
-  border-bottom:1px solid var(--border);
-}
-.nav-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 16px;
-  height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-.nav-links{
-  display:flex;
-  gap:48px;
-  justify-content:center;
-  width:100%;
-  flex-wrap:wrap;
-}
-.nav a{
-  color:var(--link);
-  text-decoration:none;
-  transition:color .15s ease;
-}
-.nav a:hover{color:var(--fg)}
-.nav-lang{
+.site-nav__languages{
   white-space:nowrap;
 }
-.nav-lang a, .nav-lang span{
+.site-nav__languages a, .site-nav__languages span{
   margin-left:12px;
   color:var(--muted);
 }
-.nav-lang .active{color:var(--fg); font-weight:600}
+.site-nav__languages .active{color:var(--fg); font-weight:600}
 
 .page{
   padding: 24px 0 80px;
@@ -194,28 +168,4 @@ body{
 .sources a{
   color:#93c5fd;
   word-break:break-word;
-}
-
-.site-footer{
-  margin-top:1.5rem;
-  padding:0.5rem 1rem 1rem;
-  text-align:center;
-}
-
-.social-links{
-  padding-top:0.5rem;
-  display:flex;
-  justify-content:center;
-  gap:2rem;
-  flex-wrap:wrap;
-}
-
-.social-icon{
-  font-size:1.5rem;
-  color:var(--fg);
-  transition:color .3s ease;
-}
-
-.social-icon:hover{
-  color:var(--muted);
 }

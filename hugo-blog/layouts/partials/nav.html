@@ -1,12 +1,12 @@
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-links">
-      <a href="/" class="{{ if .IsHome }}active{{ end }}">Home</a>
-      <a href="{{ .Site.Home.RelPermalink }}" class="{{ if .IsHome }}active{{ end }}">Blog</a>
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="site-nav__inner">
+    <div class="site-nav__links">
+      <a href="/">Home</a>
+      <a href="{{ .Site.Home.RelPermalink }}" {{ if .IsHome }}aria-current="page"{{ end }}>Blog</a>
       <a href="/recommendations/">Recommendations</a>
       <a href="/#projects">Projects</a>
     </div>
-    <div class="nav-lang">
+    <div class="site-nav__languages">
       {{ if .IsTranslated }}
         {{ range .AllTranslations }}
           {{ $label := or .Language.Params.label .Language.Lang }}

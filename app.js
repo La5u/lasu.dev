@@ -28,28 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.setInterval(randomizeFont, 1600);
     }
 
+    document.querySelectorAll('[data-current-year]').forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
+
     const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-    });
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        projectCards.forEach(card => card.classList.add('project-card--pending'));
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            }
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('project-card--visible');
+                    observer.unobserve(entry.target);
+                }
+            });
         });
-    });
 
-    projectCards.forEach(card => observer.observe(card));
-
-    const username = 'la5u';
-
-    document.querySelectorAll('.github-link[data-repo]').forEach(link => {
-        const repo = link.getAttribute('data-repo');
-        link.href = `https://github.com/${username}/${repo}`;
-    });
+        projectCards.forEach(card => observer.observe(card));
+    }
 });
