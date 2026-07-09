@@ -21,6 +21,7 @@
   <meta name="twitter:image" content="https://lasu.dev/right-side-comments/assets/icon128.png" />
   <link rel="icon" type="image/png" href="./assets/icon.png" />
   <link rel="apple-touch-icon" href="./assets/icon128.png" />
+  <link rel="stylesheet" href="../assets/extension-page.css" />
   <link rel="stylesheet" href="./style.css" />
   <script type="application/ld+json">
     {
@@ -127,10 +128,10 @@
   </main>
 
   <footer>
-    <small><a href="../">Lasu Shin</a> • <span id="year"></span></small>
+    <small><a href="../">Lasu Shin</a> • <span data-current-year>2026</span></small>
   </footer>
 
-  <script src="./script.js"></script>
+  <script defer src="../assets/site-chrome.js"></script>
   <script>
     fetch('https://api.github.com/repos/La5u/Right-Side-Comments/releases/latest')
       .then(r => r.ok ? r.json() : Promise.reject())

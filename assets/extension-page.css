@@ -1,18 +1,26 @@
+:root {
+  --extension-brand: #000;
+  --extension-text: #111;
+  --extension-page: #fff;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
+  color: var(--extension-text);
+  background: var(--extension-page);
+}
+
+body.uncensored-page {
+  --extension-brand: #111;
 }
 
 .banner {
-  background: #000;
+  background: var(--extension-brand);
   color: #fff;
   text-align: center;
   padding: 18px 16px 14px;
@@ -33,8 +41,8 @@ h1 {
 }
 
 .version {
-  font-size: 14px;
   margin-top: 8px;
+  font-size: 14px;
 }
 
 .container {
@@ -57,7 +65,8 @@ h1 {
   text-decoration: none;
 }
 
-.page-nav a:hover {
+.page-nav a:hover,
+.page-nav a:focus-visible {
   text-decoration: underline;
 }
 
@@ -69,17 +78,17 @@ h1 {
 }
 
 .actions a {
-  border: 1px solid #cbcbcb;
-  border-radius: 999px;
-  padding: 9px 14px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  background: #fff;
-  transition: transform 0.16s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #cbcbcb;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.16s ease;
 }
 
 .actions a:hover {
@@ -102,21 +111,9 @@ section {
 }
 
 .copy p {
-  line-height: 1.65;
-  color: #333;
   margin-top: 12px;
-}
-
-.shots {
-  display: flex;
-  justify-content: center;
-}
-
-.shots img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
+  color: #333;
+  line-height: 1.65;
 }
 
 .copy h2 {
@@ -131,21 +128,24 @@ section {
   line-height: 1.65;
 }
 
-.uncensored-page .banner,
-.uncensored-page footer {
-  background: #111;
+.shots {
+  display: flex;
+  justify-content: center;
 }
 
-.uncensored-page .logo {
-  filter: none;
+.shots img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 footer {
-  text-align: center;
-  color: #fff;
-  background: #000;
-  font-size: 13px;
   padding: 25px 0;
+  background: var(--extension-brand);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
 }
 
 footer a {
@@ -153,6 +153,23 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus-visible {
   text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
