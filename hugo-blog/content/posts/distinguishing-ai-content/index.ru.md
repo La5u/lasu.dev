@@ -6,7 +6,6 @@ description: "Подборка сайтов, на которых можно тр
 tags:
   - ai
   - media-literacy
-  - internet
 ---
 Сгенерированный ИИ контент становится всё сложнее отличить от реального с каждым днём. Вот несколько сайтов, которые я рекомендую для практики:
 ### Лёгкий уровень:
@@ -16,4 +15,5 @@ tags:
 - [SightEngine](https://sightengine.com/ai-or-not)
 - [AIvsReal](https://ai-vs-real.com/)
 ### Сложный уровень:
-- [Reality Check](https://realitycheckk.replit.app) - новые модели
+- [r/isthisai](https://www.reddit.com/r/isthisai/) - обсуждения сообщества
+- [Slopcheck](https://slopcheck.co/) - проверка контента на ИИ

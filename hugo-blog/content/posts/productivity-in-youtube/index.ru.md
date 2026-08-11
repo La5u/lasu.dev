@@ -8,7 +8,7 @@ tags:
   - youtube
   - browser-extensions
 sources:
-  - https://la5u.github.io/Right-Side-Comments/
+  - https://lasu.dev/right-side-comments
   - https://dearrow.ajay.app/
   - https://sponsor.ajay.app/
   - https://ublockorigin.com/
@@ -17,7 +17,7 @@ sources:
 
 ![Right Side Comments в работе](right_side_comments.jpg)
 
-[Right Side Comments](https://la5u.github.io/Right-Side-Comments/) я лично разрабатываю уже более 3 месяцев. Расширение переносит комментарии вправо в YouTube и размещает их вместо рекомендаций. Это помогает сосредоточиться на видео без лишних отвлечений справа.
+[Right Side Comments](https://lasu.dev/right-side-comments) я лично разрабатываю уже более 3 месяцев. Расширение переносит комментарии вправо в YouTube и размещает их вместо рекомендаций. Это помогает сосредоточиться на видео без лишних отвлечений справа.
 
 [DeArrow](https://dearrow.ajay.app/) заменяет кликбейтные превью и заголовки на более нейтральные.
 

@@ -14,6 +14,18 @@
       {{ end }}
     {{ end }}
     {{ $filters = uniq $filters | sort }}
+    {{/* Keep the catch-all category at the end of the filter list. */}}
+    {{ $orderedFilters := slice }}
+    {{ $hasOther := false }}
+    {{ range $filters }}
+      {{ if eq . "Other" }}
+        {{ $hasOther = true }}
+      {{ else }}
+        {{ $orderedFilters = $orderedFilters | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if $hasOther }}{{ $orderedFilters = $orderedFilters | append "Other" }}{{ end }}
+    {{ $filters = $orderedFilters }}
 
     <ul class="cats">
       <li><button class="cat-btn is-active" data-filter="all">All</button></li>

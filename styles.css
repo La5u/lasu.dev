@@ -199,6 +199,22 @@ body.recommendations-page {
     color: #9ec7cc;
 }
 
+.recommendation-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.recommendation-link:hover,
+.recommendation-link:focus-visible {
+    text-decoration: underline;
+}
+
+.risk-warning {
+    margin-left: 0.3rem;
+    color: #ffd43b;
+    cursor: help;
+}
+
 .store-links {
     display: inline-flex;
     flex-wrap: wrap;
@@ -207,8 +223,7 @@ body.recommendations-page {
     margin-left: 0.5rem;
 }
 
-.store-link,
-.store-link-disabled {
+.store-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -222,12 +237,6 @@ body.recommendations-page {
 .store-link:hover {
     color: #fff;
     border-color: #7fe7ff;
-}
-
-.store-link-disabled {
-    color: #43666d;
-    border-color: #1a2a2e;
-    cursor: not-allowed;
 }
 
 .paid-marker {

@@ -1,5 +1,5 @@
 ---
-title: "The Shampoo Scam"
+title: "The Shampoo Delusion"
 date: 2026-03-07
 slug: "the-shampoo-scam"
 description: "Why you don't actually need shampoo."

@@ -1,5 +1,5 @@
 ---
-title: "У вас осталось меньше времени, чем вам кажется"
+title: "Memento mori"
 date: 2026-01-18
 slug: "you-dont-have-much-time"
 description: "Ваше ощущение времени ускоряется с возрастом"

@@ -6,6 +6,11 @@ timeZone = "Asia/Seoul"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableGitInfo = true
+
+# Use the source file's modification time as the automatic “Updated” date.
+[frontmatter]
+  lastmod = [":fileModTime", "lastmod", ":git", "modified", ":default"]
+
 [params]
   author = "Lasu Shin"
   description = "Articles by Lasu Shin about productivity, technology, health, and digital habits."

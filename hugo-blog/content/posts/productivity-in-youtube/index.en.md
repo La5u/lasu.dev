@@ -8,7 +8,7 @@ tags:
   - youtube
   - browser-extensions
 sources:
-  - https://la5u.github.io/Right-Side-Comments/
+  - https://lasu.dev/right-side-comments
   - https://dearrow.ajay.app/
   - https://sponsor.ajay.app/
   - https://ublockorigin.com/
@@ -18,7 +18,7 @@ Have you ever gotten stuck on YouTube longer than you intended? If you want to u
 
 ![Right Side Comments in action](right_side_comments.jpg)
 
-[Right Side Comments](https://la5u.github.io/Right-Side-Comments/) is an extension I have personally been building for more than 3 months. It moves YouTube comments to the right side and places them where recommendations normally appear. That makes it easier to stay focused on the video without the usual distractions.
+[Right Side Comments](https://lasu.dev/right-side-comments) is an extension I have personally been building for more than 3 months. It moves YouTube comments to the right side and places them where recommendations normally appear. That makes it easier to stay focused on the video without the usual distractions.
 
 [DeArrow](https://dearrow.ajay.app/) replaces clickbait thumbnails and titles with more neutral ones.
 

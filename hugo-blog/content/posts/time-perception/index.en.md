@@ -1,5 +1,5 @@
 ---
-title: "Why Time Seems to Move Faster as You Age"
+title: "The Perception of Time Acceleration"
 date: 2026-01-18
 slug: "time-perception-age"
 description: "Why does time feel like it's moving faster as we get older?"

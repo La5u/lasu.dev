@@ -18,6 +18,7 @@ AI generated content is harder to distinguish every day. Here are some websites 
 - [AIvsReal](https://ai-vs-real.com/)
 
 ### Hard
-- [Reality Check](https://realitycheckk.replit.app) — newer models
+- [r/isthisai](https://www.reddit.com/r/isthisai/) — community discussion
+- [Slopcheck](https://slopcheck.co/) — AI content detection
 
 
