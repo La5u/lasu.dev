@@ -116,11 +116,35 @@ h2 {
     filter: invert(1);
 }
 
+.hidden-source-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.hidden-source-link:hover,
+.hidden-source-link:focus-visible {
+    color: white;
+    text-decoration: underline;
+}
+
 #particles-js {
     z-index: 0;
     position: relative;
     height: 100vh;
+    overflow: hidden;
+    background: #000;
     pointer-events: auto;
+}
+
+.bounce-canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 a.github-link {
     display: inline-block;

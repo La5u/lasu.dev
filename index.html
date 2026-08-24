@@ -40,7 +40,7 @@
     <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div id="particles-js" aria-hidden="true"></div>
     <main class="container">
         <header>
             <h1 id="name" class="random-font">Lasu Shin</h1>
@@ -68,14 +68,13 @@
                 </div>
             </article>
             <article class="project-card">
-                <img class="invert-icon" src="clearframe.png" alt="ClearFrame icon" loading="lazy" decoding="async">
-                <h3>ClearFrame</h3>
-                <p>A browser extension that highlights biased or loaded language and shows neutral alternatives.</p>
+                <img class="invert-icon" src="clearframe.png" alt="Word Lookup icon" loading="lazy" decoding="async">
+                <h3>Word Lookup</h3>
+                <p>Look up words without leaving the page.</p>
                 <div class="project-links">
-                    <a href="clearframe/" target="_blank" rel="noreferrer">Website</a>
-                    <a href="https://chromewebstore.google.com/detail/clearframe/nkijmgimgocgagenbmgjjchaepjlcked" target="_blank" rel="noreferrer">Chrome</a>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/clearframe/" target="_blank" rel="noreferrer">Firefox</a>
-                    <a class="github-link" href="https://github.com/la5u/clearframe" target="_blank" rel="noreferrer" aria-label="ClearFrame GitHub repository"><span class="sr-only">GitHub</span></a>
+                    <a href="word-lookup/" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://chromewebstore.google.com/detail/word-lookup/fmkaeiligcgpdmmblhkjangciejijpco" target="_blank" rel="noreferrer">Chrome</a>
+                    <a href="https://addons.mozilla.org/fr/firefox/addon/word_lookup/" target="_blank" rel="noreferrer">Firefox</a>
                 </div>
             </article>
             <article class="project-card">
@@ -85,14 +84,9 @@
                 <div class="project-links">
                     <a href="uncensored/" data-project-link="uncensored:website" target="_blank" rel="noreferrer">Website</a>
                     <a href="#" data-project-link="uncensored:chrome" target="_blank" rel="noreferrer">Chrome</a>
-                    <a href="#" data-project-link="uncensored:edge" target="_blank" rel="noreferrer">Edge</a>
                     <a href="#" data-project-link="uncensored:firefox" target="_blank" rel="noreferrer">Firefox</a>
                     <a class="github-link" href="#" data-project-link="uncensored:github" target="_blank" rel="noreferrer" aria-label="Uncensored YouTube GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
-            </article>
-            <article class="project-card">
-                <h3>LegalRAG</h3>
-                <p>Local RAG system for Korean law firms.</p>
             </article>
             <article class="project-card">
                 <img src="moodle.png" alt="Moodle Quiz Shortcuts icon" loading="lazy" decoding="async">
@@ -101,14 +95,6 @@
                 <div class="project-links">
                     <a href="https://greasyfork.org/en/scripts/524310-moodle-quiz-shorcuts" target="_blank" rel="noreferrer">GreasyFork</a>
                     <a class="github-link" href="https://github.com/la5u/Moodle-Quiz-Shortcuts" target="_blank" rel="noreferrer" aria-label="Moodle Quiz Shortcuts GitHub repository"><span class="sr-only">GitHub</span></a>
-                </div>
-            </article>
-            <article class="project-card">
-                <img src="favicon.png" alt="lasu.dev website icon" loading="lazy" decoding="async">
-                <h3>This website</h3>
-                <p>Hosted on Cloudflare Pages, only uses html, css and js</p>
-                <div class="project-links">
-                    <a class="github-link" href="https://github.com/la5u/lasu.dev" target="_blank" rel="noreferrer" aria-label="lasu.dev GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
             </article>
             <article class="project-card">
@@ -138,7 +124,19 @@
                     <a class="github-link" href="https://github.com/la5u/windows-debloaters" target="_blank" rel="noreferrer" aria-label="Windows Debloaters GitHub repository"><span class="sr-only">GitHub</span></a>
                 </div>
             </article>
+            <article class="project-card">
+                <img class="invert-icon" src="clearframe.png" alt="ClearFrame icon" loading="lazy" decoding="async">
+                <h3>ClearFrame</h3>
+                <p>A browser extension that highlights biased or loaded language and shows neutral alternatives.</p>
+                <div class="project-links">
+                    <a href="clearframe/" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://chromewebstore.google.com/detail/clearframe/nkijmgimgocgagenbmgjjchaepjlcked" target="_blank" rel="noreferrer">Chrome</a>
+                    <a href="https://addons.mozilla.org/en-US/firefox/addon/clearframe/" target="_blank" rel="noreferrer">Firefox</a>
+                    <a class="github-link" href="https://github.com/la5u/clearframe" target="_blank" rel="noreferrer" aria-label="ClearFrame GitHub repository"><span class="sr-only">GitHub</span></a>
+                </div>
+            </article>
         </div>
+        <a class="hidden-source-link" href="https://github.com/la5u/lasu.dev" target="_blank" rel="noreferrer">Source code</a>
         </section>
 
     </main>
@@ -164,6 +162,7 @@
     </footer>
     <script defer src="assets/project-links.js"></script>
     <script defer src="particles-config.js"></script>
+    <script defer src="bounce-animation.js"></script>
     <script defer src="app.js"></script>
 </body>
 </html>

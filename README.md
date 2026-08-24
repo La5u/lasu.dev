@@ -8,6 +8,7 @@ Personal website.
 - `blog/` - Blog (built from hugo-blog/)
 - `hugo-blog/` - Hugo blog source
 - `clearframe/` - ClearFrame browser extension landing page
+- `word-lookup/` - Word Lookup browser extension landing page
 - `right-side-comments/` - Browser extension landing page
 - `recommendations/` - Static recommendation pages
 
