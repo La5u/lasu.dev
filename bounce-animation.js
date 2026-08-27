@@ -23,16 +23,18 @@
         const physicsStepsPerDraw = 1;
         const physicsStepScale = 1 / physicsStepsPerReferenceFrame;
         const colorBurnInterval = 4;
+        const resizeSettleDelay = 120;
         const colorStartSpeed = Math.hypot(initialVelocityX, initialVelocityY);
 
-        let width = window.innerWidth;
-        let height = window.innerHeight;
+        let width = Math.max(1, container.clientWidth || window.innerWidth);
+        let height = Math.max(1, container.clientHeight || window.innerHeight);
         let x = radius + Math.random() * Math.max(0, width - radius * 2);
         let y = radius + Math.random() * Math.max(0, height - radius * 2);
         let dx = initialVelocityX;
         let dy = initialVelocityY;
         let frameCount = 0;
         let randomState = 217165;
+        let resizeTimer = null;
 
         function clamp(value, min, max) {
             if (max < min) return (min + max) / 2;
@@ -49,6 +51,14 @@
 
         function randomResetSpeed() {
             return resetSpeedMin * (resetSpeedMax / resetSpeedMin) ** seededRandom();
+        }
+
+        function resetAxisIfNeeded(horizontal) {
+            if (horizontal && Math.abs(dx) >= speedResetThreshold) {
+                dx = Math.sign(dx) * randomResetSpeed();
+            } else if (!horizontal && Math.abs(dy) >= speedResetThreshold) {
+                dy = Math.sign(dy) * randomResetSpeed();
+            }
         }
 
         function getBallColor() {
@@ -86,53 +96,107 @@
             context.fill();
         }
 
-        function resizeCanvas() {
+        function resizeCanvas(preserveTrail = true) {
+            const nextWidth = Math.max(1, container.clientWidth || window.innerWidth);
+            const nextHeight = Math.max(1, container.clientHeight || window.innerHeight);
             const pixelRatio = window.devicePixelRatio || 1;
+            const nextBackingWidth = Math.round(nextWidth * pixelRatio);
+            const nextBackingHeight = Math.round(nextHeight * pixelRatio);
 
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width * pixelRatio;
-            canvas.height = height * pixelRatio;
+            if (canvas.width === nextBackingWidth && canvas.height === nextBackingHeight) return;
+
+            let snapshot = null;
+            if (preserveTrail && canvas.width && canvas.height) {
+                snapshot = document.createElement('canvas');
+                snapshot.width = canvas.width;
+                snapshot.height = canvas.height;
+                snapshot.getContext('2d').drawImage(canvas, 0, 0);
+            }
+
+            const widthScale = nextWidth / width;
+            const heightScale = nextHeight / height;
+            width = nextWidth;
+            height = nextHeight;
+            x *= widthScale;
+            y *= heightScale;
+
+            canvas.width = nextBackingWidth;
+            canvas.height = nextBackingHeight;
             context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
             context.fillStyle = '#000';
             context.fillRect(0, 0, width, height);
 
-            x = clamp(x, 0, width);
-            y = clamp(y, 0, height);
+            if (snapshot) {
+                context.drawImage(
+                    snapshot,
+                    0,
+                    0,
+                    snapshot.width,
+                    snapshot.height,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+            }
+
+            x = clamp(x, radius, width - radius);
+            y = clamp(y, radius, height - radius);
             draw(false);
+        }
+
+        function scheduleResize() {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(() => resizeCanvas(true), resizeSettleDelay);
         }
 
         function bounce(horizontal) {
             dx *= bounceMultiplier;
             dy *= bounceMultiplier;
 
-            if (horizontal) {
-                dx = -dx;
-                if (Math.abs(dx) >= speedResetThreshold) {
-                    dx = Math.sign(dx) * randomResetSpeed();
-                }
-            } else {
-                dy = -dy;
-                if (Math.abs(dy) >= speedResetThreshold) {
-                    dy = Math.sign(dy) * randomResetSpeed();
-                }
+            if (horizontal) dx = -dx;
+            else dy = -dy;
+
+            resetAxisIfNeeded(horizontal);
+        }
+
+        function resolveAxisCollision(value, min, max, horizontal) {
+            if (max <= min) return (min + max) / 2;
+
+            let reflections = 0;
+            while ((value < min || value > max) && reflections < 64) {
+                if (value < min) value = min + (min - value);
+                else value = max - (value - max);
+
+                bounce(horizontal);
+                reflections++;
             }
+
+            // Keep the ball visible even after an abnormally large frame jump.
+            if (value < min || value > max) {
+                value = clamp(value, min, max);
+                if (horizontal) dx = value === min ? Math.abs(dx) : -Math.abs(dx);
+                else dy = value === min ? Math.abs(dy) : -Math.abs(dy);
+                resetAxisIfNeeded(horizontal);
+            }
+
+            return value;
         }
 
         function simulatePhysicsStep() {
-            x += dx * physicsStepScale;
-            y += dy * physicsStepScale;
+            const distanceX = dx * physicsStepScale;
+            const distanceY = dy * physicsStepScale;
+            const substeps = Math.min(
+                64,
+                Math.max(1, Math.ceil(Math.max(Math.abs(distanceX), Math.abs(distanceY)) / (radius / 2)))
+            );
 
-            if ((x - radius <= 0 && dx < 0) || (x + radius >= width && dx > 0)) {
-                if (x < 0) x = -x;
-                else if (x > width) x = width * 2 - x;
-                bounce(true);
-            }
+            for (let i = 0; i < substeps; i++) {
+                x += dx * physicsStepScale / substeps;
+                y += dy * physicsStepScale / substeps;
 
-            if ((y - radius <= 0 && dy < 0) || (y + radius >= height && dy > 0)) {
-                if (y < 0) y = -y;
-                else if (y > height) y = height * 2 - y;
-                bounce(false);
+                x = resolveAxisCollision(x, radius, width - radius, true);
+                y = resolveAxisCollision(y, radius, height - radius, false);
             }
         }
 
@@ -144,13 +208,14 @@
             }
         }
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        window.addEventListener('resize', scheduleResize);
+        resizeCanvas(false);
         const intervalId = window.setInterval(update, 1000 / drawRate);
 
         return () => {
             window.clearInterval(intervalId);
-            window.removeEventListener('resize', resizeCanvas);
+            window.clearTimeout(resizeTimer);
+            window.removeEventListener('resize', scheduleResize);
             canvas.remove();
         };
     };

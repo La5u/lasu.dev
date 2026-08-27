@@ -88,6 +88,11 @@ h2 {
     color: white;
 }
 
+.project-card .isitai-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+
 .project-links {
     margin-top: 1rem;
     display: flex;
