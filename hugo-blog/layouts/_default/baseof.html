@@ -87,12 +87,11 @@
       {{ end }}
     {{ end }}
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/site-chrome.css">
     <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
     {{ if .IsPage }}
       <script type="application/ld+json">
-        {{ dict
+        {{ jsonify (dict
           "@context" "https://schema.org"
           "@type" "BlogPosting"
           "headline" .Title
@@ -103,18 +102,18 @@
           "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
           "author" (dict "@type" "Person" "name" $author)
           "publisher" (dict "@type" "Person" "name" $author "url" "https://lasu.dev/")
-        | jsonify | safeHTML }}
+        ) | safeJS }}
       </script>
     {{ else if .IsHome }}
       <script type="application/ld+json">
-        {{ dict
+        {{ jsonify (dict
           "@context" "https://schema.org"
           "@type" "Blog"
           "name" .Site.Title
           "description" $description
           "url" .Permalink
           "publisher" (dict "@type" "Person" "name" $author "url" "https://lasu.dev/")
-        | jsonify | safeHTML }}
+        ) | safeJS }}
       </script>
     {{ end }}
   </head>
@@ -128,16 +127,16 @@
       <p class="copyright">© Lasu Shin <span data-current-year>2026</span></p>
       <nav class="social-links">
         <a href="mailto:lasushin@proton.me" target="_blank" rel="noreferrer" class="social-icon" aria-label="Email Lasu Shin">
-          <i class="fas fa-envelope"></i>
+          <span class="site-icon site-icon--envelope" aria-hidden="true"></span>
         </a>
-        <a href="https://github.com/la5u" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/La5u" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on GitHub">
+          <span class="site-icon site-icon--github" aria-hidden="true"></span>
         </a>
         <a href="https://linkedin.com/in/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on LinkedIn">
-          <i class="fab fa-linkedin"></i>
+          <span class="site-icon site-icon--linkedin" aria-hidden="true"></span>
         </a>
         <a href="https://t.me/lasushin" target="_blank" rel="noreferrer" class="social-icon" aria-label="Lasu Shin on Telegram">
-          <i class="fab fa-telegram"></i>
+          <span class="site-icon site-icon--telegram" aria-hidden="true"></span>
         </a>
       </nav>
     </footer>

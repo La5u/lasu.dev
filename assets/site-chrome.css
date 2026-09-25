@@ -7,6 +7,56 @@
   --site-max: 1100px;
 }
 
+.site-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
+}
+
+.site-icon--envelope {
+  -webkit-mask-image: url('/assets/icons/envelope.svg');
+  mask-image: url('/assets/icons/envelope.svg');
+}
+
+.site-icon--github {
+  -webkit-mask-image: url('/assets/icons/github.svg');
+  mask-image: url('/assets/icons/github.svg');
+}
+
+.site-icon--linkedin {
+  -webkit-mask-image: url('/assets/icons/linkedin.svg');
+  mask-image: url('/assets/icons/linkedin.svg');
+}
+
+.site-icon--telegram {
+  -webkit-mask-image: url('/assets/icons/telegram.svg');
+  mask-image: url('/assets/icons/telegram.svg');
+}
+
+.site-icon--app-store-ios {
+  -webkit-mask-image: url('/assets/icons/app-store-ios.svg');
+  mask-image: url('/assets/icons/app-store-ios.svg');
+}
+
+.site-icon--google-play {
+  -webkit-mask-image: url('/assets/icons/google-play.svg');
+  mask-image: url('/assets/icons/google-play.svg');
+}
+
+.site-icon--steam {
+  -webkit-mask-image: url('/assets/icons/steam.svg');
+  mask-image: url('/assets/icons/steam.svg');
+}
+
+.site-icon--triangle-exclamation {
+  -webkit-mask-image: url('/assets/icons/triangle-exclamation.svg');
+  mask-image: url('/assets/icons/triangle-exclamation.svg');
+}
+
 .site-nav {
   border-bottom: 1px solid var(--site-border);
 }

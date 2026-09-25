@@ -28,9 +28,9 @@
     {{ $filters = $orderedFilters }}
 
     <ul class="cats">
-      <li><button class="cat-btn is-active" data-filter="all">All</button></li>
+      <li><button class="cat-btn is-active" data-filter="all" aria-pressed="true">All</button></li>
       {{ range $filters }}
-        <li><button class="cat-btn" data-filter="{{ . }}">{{ . }}</button></li>
+        <li><button class="cat-btn" data-filter="{{ . }}" aria-pressed="false">{{ . }}</button></li>
       {{ end }}
     </ul>
 

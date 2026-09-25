@@ -11,7 +11,7 @@ sources:
   - https://moika78.ru/news/2022-11-22/829859-pochemu-s-vozrastom-cheloveku-kazhetsya-chto-vremya-nachinaet-idti-bystree/
 ---
 
-![ощущение времени](time_perception.jpg)
+![ощущение времени](/blog/you-dont-have-much-time/time_perception.jpg)
 
 Чем дольше мы живем, тем больший опыт приобретаем. С опытом уменьшается острота и яркость внешних впечатлений — именно из них складывается ощущение течения времени.
 

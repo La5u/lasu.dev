@@ -11,6 +11,7 @@ Personal website.
 - `word-lookup/` - Word Lookup browser extension landing page
 - `right-side-comments/` - Browser extension landing page
 - `recommendations/` - Static recommendation pages
+- `_headers` - Cloudflare Pages security and cache headers
 
 ## Development
 
@@ -30,5 +31,3 @@ Pushed to Cloudflare Pages automatically.
 
 - Add a reproducible, repository-owned Cloudflare build configuration for the Hugo blog and generated sitemap dates.
 - Establish site-wide design tokens and apply them to the remaining page-specific styles.
-- Replace Font Awesome and particles.js CDN dependencies with local or inline assets where appropriate.
-- Replace the Right Side Comments runtime GitHub release lookup with a deploy-time version value.

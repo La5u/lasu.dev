@@ -88,21 +88,30 @@ h2 {
     color: white;
 }
 
-.project-card .isitai-title {
+.project-card .text-title {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
 }
 
+
 .project-links {
     margin-top: 1rem;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
 }
 
 .project-links a {
     text-decoration: none;
     color: deepskyblue;
     font-weight: 500;
+}
+
+.project-link-soon {
+    color: gray;
+    font-weight: 500;
+    cursor: default;
 }
 
 .project-links a:hover {
@@ -194,6 +203,8 @@ body.recommendations-page {
 }
 
 .recommendations-hero h1 {
+    font-size: clamp(1.75rem, 9vw, 3.5rem);
+    overflow-wrap: anywhere;
     margin-bottom: 0.75rem;
 }
 

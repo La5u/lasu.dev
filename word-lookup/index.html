@@ -3,29 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Word Lookup Browser Extension</title>
-  <meta name="description" content="Look up words without leaving the page with the Word Lookup browser extension." />
+  <title>Word Lookup Browser Extension | Wiktionary Definitions in Place</title>
+  <meta name="description" content="Word Lookup is a browser extension that shows Wiktionary definitions beside any word you select, in English, French, Spanish, German, Italian, Dutch, Swedish, and Romanian." />
   <link rel="canonical" href="https://lasu.dev/word-lookup/" />
   <meta property="og:title" content="Word Lookup Browser Extension" />
-  <meta property="og:description" content="Look up words without leaving the page." />
+  <meta property="og:description" content="Select a word on any page to see its Wiktionary definition beside it." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lasu.dev/word-lookup/" />
   <meta property="og:site_name" content="lasu.dev" />
-  <meta property="og:image" content="https://lasu.dev/clearframe-icon.png" />
+  <meta property="og:image" content="https://lasu.dev/word-lookup/assets/icon-128.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Word Lookup Browser Extension" />
-  <meta name="twitter:description" content="Look up words without leaving the page." />
-  <meta name="twitter:image" content="https://lasu.dev/clearframe-icon.png" />
+  <meta name="twitter:description" content="Select a word on any page to see its Wiktionary definition beside it." />
+  <meta name="twitter:image" content="https://lasu.dev/word-lookup/assets/icon-128.png" />
   <meta name="theme-color" content="#000000" />
-  <link rel="icon" type="image/png" href="../clearframe-icon.png" />
-  <link rel="apple-touch-icon" href="../clearframe-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon-32.png" />
+  <link rel="apple-touch-icon" href="./assets/icon-128.png" />
   <link rel="stylesheet" href="../assets/extension-page.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Lookup",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Firefox",
+      "softwareVersion": "0.3.0",
+      "url": "https://lasu.dev/word-lookup/",
+      "image": "https://lasu.dev/word-lookup/assets/icon-128.png",
+      "description": "Word Lookup shows Wiktionary definitions beside any word you select on a web page.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lasu Shin",
+        "url": "https://lasu.dev/"
+      }
+    }
+  </script>
 </head>
 <body>
   <header class="banner">
-    <img src="../clearframe-icon.png" alt="Word Lookup icon" class="logo" />
+    <img src="./assets/icon-128.png" width="64" height="64" alt="Word Lookup icon" class="logo" />
     <h1>Word Lookup</h1>
-    <p class="version">Look up words without leaving the page</p>
+    <p class="version">Look up words without leaving the page · v0.3.0</p>
   </header>
 
   <main class="container">
@@ -41,18 +65,46 @@
         <img class="browser-icon-img" src="../assets/browser-icons/chrome.svg" alt="" aria-hidden="true" />
         <span>Chrome</span>
       </a>
-      <a href="https://addons.mozilla.org/fr/firefox/addon/word_lookup/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/word_lookup/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
         <img class="browser-icon-img" src="../assets/browser-icons/firefox.svg" alt="" aria-hidden="true" />
         <span>Firefox</span>
       </a>
-      <a href="https://github.com/la5u/word-lookup" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/La5u/word-lookup" target="_blank" rel="noopener noreferrer">
         <img class="browser-icon-img" src="../assets/browser-icons/github.svg" alt="" aria-hidden="true" />
         <span>GitHub</span>
       </a>
     </div>
 
+    <section class="hero-shot">
+      <img src="./assets/french.webp" width="1280" height="800" alt="Word Lookup popup defining the French word “pâte” on the French Wikipedia article about croissants" />
+    </section>
+
     <section class="copy">
       <p>Select a word on any webpage to see its definition in a small popup beside it—no new tab needed. Word Lookup supports English, French, Spanish, German, Italian, Dutch, Swedish, and Romanian.</p>
+
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Definitions in place</strong> — Parts of speech, definitions, and example sentences from English Wiktionary, with a link to the full entry.</li>
+        <li><strong>Inflected forms</strong> — Selecting an inflected form also shows the base word's definitions. <strong>Show all forms</strong> fetches the other base words when a form comes from more than one.</li>
+        <li><strong>Noun gender</strong> — Optionally shows the gender of nouns for supported languages.</li>
+        <li><strong>History</strong> — Keeps your last 100 lookups, with links to Wiktionary. You can clear it at any time.</li>
+        <li><strong>Settings</strong> — Turn lookups, examples, noun genders, the loading indicator, and “no entry found” messages on or off.</li>
+      </ul>
+    </section>
+
+    <section class="shot-grid" aria-label="More screenshots">
+      <img src="./assets/spanish.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Word Lookup popup on the Spanish Wikipedia article about chocolate" />
+      <img src="./assets/german.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Word Lookup popup on the German Wikipedia article about coffee" />
+      <img src="./assets/italian.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Word Lookup popup on the Italian Wikipedia article about gelato" />
+      <img src="./assets/swedish.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Word Lookup popup on the Swedish Wikipedia article about cinnamon buns" />
+    </section>
+
+    <section class="copy">
+      <h2>Privacy</h2>
+      <p>The selected word is sent to <a href="https://en.wiktionary.org/">English Wiktionary</a> for its definition, and to <a href="https://www.apertium.org/">Apertium</a> only when noun genders are enabled. Word Lookup has no server of its own. Your settings and lookup history stay in your browser; failed lookups are not recorded.</p>
+
+      <h2>Credits</h2>
+      <p>Definitions and examples come from English Wiktionary contributors and are available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Noun analysis is provided by Apertium. Word Lookup is not endorsed by or affiliated with the Wikimedia Foundation.</p>
     </section>
   </main>
 

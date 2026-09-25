@@ -1,0 +1,18 @@
+.hero-shot img,
+.shot-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.copy a {
+  color: #0369a1;
+}

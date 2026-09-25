@@ -4,33 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!prefersReducedMotion && !saveData) {
         const animationContainer = document.getElementById('particles-js');
-        const randomValue = new Uint8Array(1);
-
-        if (window.crypto && window.crypto.getRandomValues) {
-            window.crypto.getRandomValues(randomValue);
-        } else {
-            randomValue[0] = Math.floor(Math.random() * 256);
-        }
-
-        const showBounceAnimation = randomValue[0] < 128;
-
-        if (showBounceAnimation && animationContainer && window.startBounceAnimation) {
+        if (Math.random() < 0.5 && animationContainer && window.startBounceAnimation) {
             window.startBounceAnimation(animationContainer);
-        } else if (window.particlesJS && window.particlesConfig) {
-            const particleCount = window.innerWidth < 768 ? 40 : 70;
-            window.particlesConfig.particles.number.value = particleCount;
-            particlesJS('particles-js', window.particlesConfig);
+        } else if (animationContainer && window.particlesConfig) {
+            const script = document.createElement('script');
+            script.src = 'assets/vendor/particles.min.js';
+            script.onload = () => {
+                window.particlesConfig.particles.number.value = window.innerWidth < 768 ? 40 : 70;
+                particlesJS('particles-js', window.particlesConfig);
+            };
+            document.head.append(script);
         }
     }
 
-    const fonts = [
-        'Impact',
-        'Courier New',
-        'Times New Roman',
-        'Arial',
-        'Verdana',
-        'Roboto'
-    ];
+    const fonts = ['Impact', 'Courier New', 'Times New Roman', 'Arial', 'Verdana', 'Roboto'];
     const nameElement = document.getElementById('name');
 
     function randomizeFont() {

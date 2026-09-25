@@ -1,6 +1,8 @@
 function setCategory(cat) {
   document.querySelectorAll(".cat-btn").forEach(btn => {
-    btn.classList.toggle("is-active", btn.dataset.filter === cat);
+    const active = btn.dataset.filter === cat;
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-pressed", active);
   });
 
   document.querySelectorAll("#posts-list li").forEach(li => {

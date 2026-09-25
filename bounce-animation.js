@@ -7,9 +7,7 @@
 
         const context = canvas.getContext('2d');
         const radius = 30;
-        const ballColor = 'rainbow';
-        const initialComponentSpeed = 50;
-        const initialSpeed = Math.SQRT2 * initialComponentSpeed;
+        const initialSpeed = Math.SQRT2 * 50;
         const startAngle = Math.random() * Math.PI * 2;
         const initialVelocityX = Math.cos(startAngle) * initialSpeed;
         const initialVelocityY = Math.sin(startAngle) * initialSpeed;
@@ -18,10 +16,7 @@
         const resetSpeedMin = 15;
         const resetSpeedMax = 150;
         const trailFade = 0.015;
-        const drawRate = 120;
-        const physicsStepsPerReferenceFrame = 8;
-        const physicsStepsPerDraw = 1;
-        const physicsStepScale = 1 / physicsStepsPerReferenceFrame;
+        const physicsStepScale = 1 / 8;
         const colorBurnInterval = 4;
         const resizeSettleDelay = 120;
         const colorStartSpeed = Math.hypot(initialVelocityX, initialVelocityY);
@@ -62,8 +57,6 @@
         }
 
         function getBallColor() {
-            if (ballColor !== 'rainbow') return ballColor;
-
             const speed = Math.hypot(dx, dy);
             const progress = Math.max(
                 0,
@@ -127,17 +120,7 @@
             context.fillRect(0, 0, width, height);
 
             if (snapshot) {
-                context.drawImage(
-                    snapshot,
-                    0,
-                    0,
-                    snapshot.width,
-                    snapshot.height,
-                    0,
-                    0,
-                    width,
-                    height
-                );
+                context.drawImage(snapshot, 0, 0, width, height);
             }
 
             x = clamp(x, radius, width - radius);
@@ -202,20 +185,47 @@
 
         function update() {
             draw(true);
+            simulatePhysicsStep();
+        }
 
-            for (let i = 0; i < physicsStepsPerDraw; i++) {
-                simulatePhysicsStep();
+        let intervalId = null;
+        let disposed = false;
+        let containerVisible = true;
+
+        function setRunning(running) {
+            if (disposed || running === (intervalId !== null)) return;
+            if (running) intervalId = window.setInterval(update, 1000 / 120);
+            else {
+                window.clearInterval(intervalId);
+                intervalId = null;
             }
         }
 
+        function updateRunningState() {
+            setRunning(containerVisible && document.visibilityState !== 'hidden');
+        }
+
         window.addEventListener('resize', scheduleResize);
+        document.addEventListener('visibilitychange', updateRunningState);
         resizeCanvas(false);
-        const intervalId = window.setInterval(update, 1000 / drawRate);
+
+        let observer = null;
+        if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver(([entry]) => {
+                containerVisible = entry.isIntersecting;
+                updateRunningState();
+            });
+            observer.observe(container);
+        }
+        updateRunningState();
 
         return () => {
+            disposed = true;
             window.clearInterval(intervalId);
             window.clearTimeout(resizeTimer);
             window.removeEventListener('resize', scheduleResize);
+            document.removeEventListener('visibilitychange', updateRunningState);
+            observer?.disconnect();
             canvas.remove();
         };
     };

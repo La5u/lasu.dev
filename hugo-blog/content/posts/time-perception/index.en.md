@@ -11,7 +11,7 @@ sources:
   - https://moika78.ru/news/2022-11-22/829859-pochemu-s-vozrastom-cheloveku-kazhetsya-chto-vremya-nachinaet-idti-bystree/
 ---
 
-![time perception](time_perception.jpg)
+![time perception](/blog/you-dont-have-much-time/time_perception.jpg)
 
 The longer we live, the more experience we gain. And with experience, the sharpness and vividness of external impressions decreases — it is these impressions that shape our sense of time passing.
 
