@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Uncensored YouTube Browser Extension | Restore Captions</title>
+  <title>Uncensored YouTube Browser Extension | Restore English Captions</title>
   <meta
     name="description"
-    content="Uncensored YouTube is a browser extension that restores hidden words in YouTube captions so subtitles match what was actually said."
+    content="Restore censored English words in YouTube captions using surrounding context and a local Whisper audio model. Fully local and open-source."
   />
   <link rel="canonical" href="https://lasu.dev/uncensored/" />
   <meta property="og:title" content="Uncensored YouTube Browser Extension" />
-  <meta property="og:description" content="Restore hidden words in YouTube captions so subtitles match what was actually said." />
+  <meta property="og:description" content="Restore censored English words in YouTube captions using context and local audio inference. Fully local and open-source." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lasu.dev/uncensored/" />
   <meta property="og:site_name" content="lasu.dev" />
   <meta property="og:image" content="https://lasu.dev/assets/uncensored.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Uncensored YouTube Browser Extension" />
-  <meta name="twitter:description" content="Restore hidden words in YouTube captions so subtitles match what was actually said." />
+  <meta name="twitter:description" content="Restore censored English words in YouTube captions using context and local audio inference. Fully local and open-source." />
   <meta name="twitter:image" content="https://lasu.dev/assets/uncensored.png" />
   <meta name="theme-color" content="#111111" />
   <link rel="icon" type="image/png" href="../assets/uncensored.png" />
@@ -32,7 +32,7 @@
       "operatingSystem": "Chrome, Firefox",
       "url": "https://lasu.dev/uncensored/",
       "image": "https://lasu.dev/assets/uncensored.png",
-      "description": "Uncensored YouTube restores hidden words in YouTube captions so subtitles match what was actually said.",
+      "description": "Uncensored YouTube restores censored English words in YouTube captions using surrounding context and a local Whisper audio model. Fully local and open-source.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -50,7 +50,7 @@
   <header class="banner">
     <img src="../assets/uncensored.png" alt="Uncensored YouTube icon" class="logo" />
     <h1>Uncensored YouTube</h1>
-    <p class="version">Restores verbatim YouTube captions when words are hidden</p>
+    <p class="version">Restores censored English words in YouTube captions</p>
   </header>
 
   <main class="container">
@@ -77,12 +77,16 @@
     </div>
 
     <section class="copy">
-      <p>Replaces censored YouTube auto-generated captions with swears using two options:</p>
-      <ol>
-        <li><strong>Context Rules</strong> — uses deterministic regex replacements based on subtitle context (fast but lower accuracy)</li>
-        <li><strong>Audio Inference</strong> — uses a local mini whisper model to predict the censored words (slow but higher accuracy)</li>
-      </ol>
-      <p>Useful for watching videos on mute or for deaf people.</p>
+      <p>Fills censored English words in YouTube captions using surrounding caption context and a local Whisper audio inference model. Fully local and open-source.</p>
+      <h2>Options</h2>
+      <ul>
+        <li><strong>Off</strong> — disables caption filling.</li>
+        <li><strong>Rules only</strong> — uses only caption context. Minimal CPU load, high precision, but low coverage.</li>
+        <li><strong>Rules first (Recommended)</strong> — uses context for most fills and Whisper for the remaining slots. High precision and coverage with moderate CPU usage.</li>
+        <li><strong>Whisper first</strong> — uses Whisper on every slot, with rules filling any slots the model misses. Maximum precision and coverage with high CPU usage.</li>
+        <li><strong>Whisper only</strong> — uses only Whisper. Maximum precision and high coverage.</li>
+      </ul>
+      <p>Watch videos on mute or in loud areas. Requested by the deaf community.</p>
     </section>
   </main>
 
