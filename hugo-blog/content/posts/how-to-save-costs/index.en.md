@@ -2,6 +2,7 @@
 title: "How to Save Costs"
 date: 2026-04-11
 slug: "how-to-save-costs"
+description: "Everyday expenses worth a closer look, from hair care and laundry to lightbulbs and bottled water, with cheaper alternatives that work just as well."
 categories:
   - consumerism
   - Other

@@ -61,7 +61,7 @@
     <meta property="og:description" content="{{ $description }}" />
     <meta property="og:type" content="{{ $ogType }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
-    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:site_name" content="{{ .Site.Params.ogSiteName | default .Site.Title }}" />
     <meta property="og:image" content="{{ $shareImage }}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $pageTitle }}" />
