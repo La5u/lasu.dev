@@ -294,3 +294,7 @@ body.recommendations-page {
         padding: 1rem 1rem 0.8rem;
     }
 }
+
+#name {
+    line-height: 1.2;
+}

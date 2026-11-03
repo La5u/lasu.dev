@@ -141,6 +141,7 @@
             else dy = -dy;
 
             resetAxisIfNeeded(horizontal);
+            window.dispatchEvent(new Event('ballbounce'));
         }
 
         function resolveAxisCollision(value, min, max, horizontal) {
