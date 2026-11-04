@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const animationContainer = document.getElementById('particles-js');
         if (Math.random() < 0.5 && animationContainer && window.startBounceAnimation) {
             window.startBounceAnimation(animationContainer);
-            window.bounceAnimationRunning = true;
         } else if (animationContainer && window.particlesConfig) {
             const script = document.createElement('script');
             script.src = 'assets/vendor/particles.min.js';
@@ -18,26 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Each entry ends in a different generic family so letters still differ where the named font is missing.
+    // Self-hosted fonts (assets/fonts) so every device sees the same distinct set.
     const fonts = [
-        'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
-        '"Courier New", Courier, monospace',
+        '"Title Bebas Neue", sans-serif',
+        '"Title Pacifico", sans-serif',
+        '"Title Press Start 2P", sans-serif',
+        '"Title UnifrakturMaguntia", sans-serif',
+        '"Title Monoton", sans-serif',
+        '"Title Lobster", sans-serif',
+        '"Title Space Mono", sans-serif',
+        '"Title Playfair Display", sans-serif',
+        '"Title Bungee", sans-serif',
+        '"Title Caveat", sans-serif',
+        '"Title Abril Fatface", sans-serif',
+        '"Title Orbitron", sans-serif',
+        '"Title Special Elite", sans-serif',
+        '"Title Cinzel", sans-serif',
+        '"Title Creepster", sans-serif',
+        '"Title Fredoka", sans-serif',
+        '"Title Major Mono Display", sans-serif',
         '"Times New Roman", Times, serif',
-        'Georgia, "DejaVu Serif", serif',
-        '"Palatino Linotype", Palatino, "URW Palladio L", serif',
-        'Garamond, "EB Garamond", serif',
-        'Arial, Helvetica, sans-serif',
-        'Verdana, "DejaVu Sans", sans-serif',
-        '"Trebuchet MS", "Fira Sans", sans-serif',
-        '"Gill Sans", "Gill Sans MT", Calibri, sans-serif',
-        '"Lucida Console", "DejaVu Sans Mono", monospace',
-        'Consolas, "Liberation Mono", monospace',
-        '"Comic Sans MS", "Comic Neue", cursive',
-        '"Brush Script MT", "Segoe Script", cursive',
-        'Papyrus, fantasy',
-        '"Copperplate", "Copperplate Gothic Light", fantasy',
-        'system-ui, sans-serif',
-        'ui-rounded, "SF Pro Rounded", sans-serif'
+        '"Courier New", Courier, monospace',
+        'Arial, Helvetica, sans-serif'
     ];
     const nameElement = document.getElementById('name');
 
@@ -56,29 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Change one letter at a time, sweeping left to right.
         let nextLetter = 0;
-        let lastChange = 0;
         function changeNextLetter() {
-            const now = performance.now();
-            if (now - lastChange < 45) return;
-            lastChange = now;
             const span = letters[nextLetter];
             nextLetter = (nextLetter + 1) % letters.length;
-            let font;
-            do font = fonts[Math.floor(Math.random() * fonts.length)];
-            while (font === span.style.fontFamily && fonts.length > 1);
-            span.style.fontFamily = font;
+            let index;
+            do index = Math.floor(Math.random() * fonts.length);
+            while (String(index) === span.dataset.font && fonts.length > 1);
+            span.dataset.font = index;
+            span.style.fontFamily = fonts[index];
         }
+
+        fonts.forEach(font => document.fonts && document.fonts.load(`56px ${font}`, 'LasuShin'));
 
         letters.forEach(span => {
             span.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
         });
 
-        if (window.bounceAnimationRunning) {
-            // Each wall bounce changes a letter, so the title speeds up with the ball.
-            window.addEventListener('ballbounce', changeNextLetter);
-        } else {
-            window.setInterval(changeNextLetter, 400);
-        }
+        window.setInterval(changeNextLetter, 150);
     }
 
     document.querySelectorAll('[data-current-year]').forEach(element => {

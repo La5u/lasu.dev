@@ -298,3 +298,147 @@ body.recommendations-page {
 #name {
     line-height: 1.2;
 }
+
+.small-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 0.75rem 2rem;
+    max-width: calc(4 * 300px + 3 * 2rem + 2rem);
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+}
+
+.small-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0 1rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid darkslategray;
+    background: black;
+    min-width: 0;
+}
+
+.small-item h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.small-item p {
+    grid-column: 1;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #a1a1aa;
+}
+
+.small-item .project-links {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin-top: 0;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+}
+
+/* Title fonts, subset to the letters of "Lasu Shin". See assets/fonts/README.md for licences. */
+@font-face {
+    font-family: 'Title Bebas Neue';
+    src: url('assets/fonts/bebas-neue.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Pacifico';
+    src: url('assets/fonts/pacifico.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Press Start 2P';
+    src: url('assets/fonts/press-start-2p.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title UnifrakturMaguntia';
+    src: url('assets/fonts/unifrakturmaguntia.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Monoton';
+    src: url('assets/fonts/monoton.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Lobster';
+    src: url('assets/fonts/lobster.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Space Mono';
+    src: url('assets/fonts/space-mono.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Playfair Display';
+    src: url('assets/fonts/playfair-display.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Bungee';
+    src: url('assets/fonts/bungee.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Caveat';
+    src: url('assets/fonts/caveat.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Abril Fatface';
+    src: url('assets/fonts/abril-fatface.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Orbitron';
+    src: url('assets/fonts/orbitron.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Special Elite';
+    src: url('assets/fonts/special-elite.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Cinzel';
+    src: url('assets/fonts/cinzel.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Creepster';
+    src: url('assets/fonts/creepster.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Fredoka';
+    src: url('assets/fonts/fredoka.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Title Major Mono Display';
+    src: url('assets/fonts/major-mono-display.woff2') format('woff2');
+    font-display: swap;
+}
+
