@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Related Communities for Reddit | Find Similar Subreddits</title>
+  <meta name="description" content="Related Communities for Reddit is a browser extension that shows similar subreddits on every subreddit page, based on which communities share commenters." />
+  <link rel="canonical" href="https://lasu.dev/related-communities/" />
+  <meta property="og:title" content="Related Communities for Reddit" />
+  <meta property="og:description" content="Shows similar subreddits on every subreddit page, based on which communities share commenters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lasu.dev/related-communities/" />
+  <meta property="og:site_name" content="lasu.dev" />
+  <meta property="og:image" content="https://lasu.dev/related-communities/assets/icon-128.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Related Communities for Reddit" />
+  <meta name="twitter:description" content="Shows similar subreddits on every subreddit page, based on which communities share commenters." />
+  <meta name="twitter:image" content="https://lasu.dev/related-communities/assets/icon-128.png" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon-32.png" />
+  <link rel="apple-touch-icon" href="./assets/icon-128.png" />
+  <link rel="stylesheet" href="../assets/extension-page.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Related Communities for Reddit",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome, Firefox",
+      "softwareVersion": "0.1.0",
+      "url": "https://lasu.dev/related-communities/",
+      "image": "https://lasu.dev/related-communities/assets/icon-128.png",
+      "description": "Related Communities for Reddit shows similar subreddits on every subreddit page, based on which communities share commenters.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Lasu Shin",
+        "url": "https://lasu.dev/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="banner">
+    <img src="./assets/icon-128.png" width="64" height="64" alt="Related Communities for Reddit icon" class="logo" />
+    <h1>Related Communities for Reddit</h1>
+    <p class="version">Find similar subreddits · v0.1.0</p>
+  </header>
+
+  <main class="container">
+    <nav class="page-nav" aria-label="Page navigation">
+      <a href="../">Lasu Shin</a>
+      <a href="../right-side-comments/">Right Side Comments</a>
+      <a href="../word-lookup/">Word Lookup</a>
+      <a href="../clearframe/">ClearFrame</a>
+      <a href="../uncensored/">Uncensored YouTube</a>
+    </nav>
+
+    <div class="actions">
+      <a href="https://chromewebstore.google.com/detail/related-communities-for-r/chapcchdkmhkclkgkpnmomncgbpeebmo" target="_blank" rel="noopener noreferrer" aria-label="Install from Chrome Web Store">
+        <img class="browser-icon-img" src="../assets/browser-icons/chrome.svg" alt="" aria-hidden="true" />
+        <span>Chrome</span>
+      </a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/related-communities-for-reddit/" target="_blank" rel="noopener noreferrer" aria-label="Install from Firefox Add-ons">
+        <img class="browser-icon-img" src="../assets/browser-icons/firefox.svg" alt="" aria-hidden="true" />
+        <span>Firefox</span>
+      </a>
+      <a href="https://github.com/La5u/reddit-suggestions" target="_blank" rel="noopener noreferrer">
+        <img class="browser-icon-img" src="../assets/browser-icons/github.svg" alt="" aria-hidden="true" />
+        <span>GitHub</span>
+      </a>
+    </div>
+
+    <section class="hero-shot">
+      <img src="./assets/sidebar.webp" width="1280" height="800" alt="Related communities panel in the sidebar of r/fountainpens, listing r/Pen_Swap, r/stationery, r/notebooks and more" />
+    </section>
+
+    <section class="copy">
+      <p>Adds a list of related subreddits to the sidebar on subreddit pages. Useful for finding smaller communities on the same topic.</p>
+
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Related subreddits</strong> — Two subreddits count as related when a lot of the same people comment in both. Shows 10 per subreddit, and 20 with <strong>show more</strong>.</li>
+        <li><strong>About 115,000 subreddits</strong> — The lists come from a month of public Reddit comments (September 2026).</li>
+        <li><strong>Position</strong> — Put the list at the top or bottom of the sidebar, or in a floating box in the bottom-right corner.</li>
+        <li><strong>On/off switch</strong> — Turn it off from the toolbar button, or hide the panel on the page.</li>
+      </ul>
+    </section>
+
+    <section class="shot-grid" aria-label="More screenshots">
+      <img src="./assets/floating.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Floating related communities box on r/climbing" />
+      <img src="./assets/settings.webp" width="1280" height="800" loading="lazy" decoding="async" alt="Toolbar popup with the on/off switch and position options" />
+    </section>
+
+    <section class="copy">
+      <h2>Privacy</h2>
+      <p>It doesn't use your Reddit account, and the lists are built into the extension, so it makes no network requests and doesn't send anything anywhere. It only runs on reddit.com and only reads the URL to know which subreddit is open. Your settings stay in your browser.</p>
+
+      <h2>Credits</h2>
+      <p>The lists are derived from public Reddit comment data from <a href="https://github.com/ArthurHeitmann/arctic_shift">Arctic Shift</a>; only the names of related subreddits are included. Related Communities for Reddit is not endorsed by or affiliated with Reddit, Inc.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>Related Communities for Reddit • <a href="../">Lasu Shin</a> <span data-current-year>2026</span></small>
+  </footer>
+  <script defer src="../assets/site-chrome.js"></script>
+</body>
+</html>
