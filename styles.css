@@ -299,6 +299,13 @@ body.recommendations-page {
     line-height: 1.2;
 }
 
+/* Zero line height keeps the heading's height steady while letter sizes change. */
+#name span {
+    display: inline-block;
+    line-height: 0;
+    white-space: pre;
+}
+
 .small-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));

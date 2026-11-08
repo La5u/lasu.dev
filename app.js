@@ -61,31 +61,66 @@ document.addEventListener('DOMContentLoaded', () => {
             return index;
         }
 
+        // Each font draws a glyph at its own size and height, so scale and shift every
+        // glyph to match how Arial draws it. Keeps the letters' shapes but not their jumps.
+        const referenceFont = 'Arial, Helvetica, sans-serif';
+        const maxWidthRatio = 1.25;
+        const minWidthLimit = 60; // at 100px, so narrow glyphs like i aren't squashed
+        const measureContext = document.createElement('canvas').getContext('2d');
+        const glyphBoxes = new Map();
+
+        function glyphBox(char, font) {
+            const key = `${char}|${font}`;
+            if (!glyphBoxes.has(key)) {
+                measureContext.font = `bold 100px ${font}`;
+                const metrics = measureContext.measureText(char);
+                glyphBoxes.set(key, {
+                    height: metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent,
+                    descent: metrics.actualBoundingBoxDescent,
+                    width: metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight
+                });
+            }
+            return glyphBoxes.get(key);
+        }
+
         function setFont(span, index) {
+            const font = fonts[index];
+            const target = glyphBox(span.textContent, referenceFont);
+            const box = glyphBox(span.textContent, font);
+            const scale = Math.min(target.height / box.height, Math.max(target.width * maxWidthRatio, minWidthLimit) / box.width);
+            const shift = (target.descent - box.descent * scale) / 100 / scale;
             span.dataset.font = index;
-            span.style.fontFamily = fonts[index];
+            span.style.fontFamily = font;
+            span.style.fontSize = `${scale}em`;
+            span.style.transform = `translateY(${shift}em)`;
         }
 
-        fonts.forEach(font => document.fonts && document.fonts.load(`56px ${font}`, 'LasuShin'));
-
-        if (Math.random() < 0.5) {
-            // Change one letter at a time, sweeping left to right.
-            letters.forEach(span => setFont(span, pickFont()));
-            let nextLetter = 0;
-            window.setInterval(() => {
-                const span = letters[nextLetter];
-                nextLetter = (nextLetter + 1) % letters.length;
-                setFont(span, pickFont(span.dataset.font));
-            }, 150);
-        } else {
-            // Change the whole name at once every so often.
-            const changeAll = () => {
-                const index = pickFont(letters[0].dataset.font);
-                letters.forEach(span => setFont(span, index));
-            };
-            changeAll();
-            window.setInterval(changeAll, 1600);
+        function animateName() {
+            if (Math.random() < 0.5) {
+                // Change one letter at a time, sweeping left to right.
+                letters.forEach(span => setFont(span, pickFont()));
+                let nextLetter = 0;
+                window.setInterval(() => {
+                    const span = letters[nextLetter];
+                    nextLetter = (nextLetter + 1) % letters.length;
+                    setFont(span, pickFont(span.dataset.font));
+                }, 150);
+            } else {
+                // Change the whole name at once every so often.
+                const changeAll = () => {
+                    const index = pickFont(letters[0].dataset.font);
+                    letters.forEach(span => setFont(span, index));
+                };
+                changeAll();
+                window.setInterval(changeAll, 1600);
+            }
         }
+
+        // Glyphs can only be measured once their fonts have loaded.
+        const fontsLoaded = document.fonts
+            ? Promise.all(fonts.map(font => document.fonts.load(`bold 100px ${font}`, 'LasuShin')))
+            : Promise.resolve();
+        fontsLoaded.catch(() => {}).then(animateName);
     }
 
     document.querySelectorAll('[data-current-year]').forEach(element => {
