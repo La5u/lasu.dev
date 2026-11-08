@@ -365,12 +365,6 @@ body.recommendations-page {
 }
 
 @font-face {
-    font-family: 'Title Monoton';
-    src: url('assets/fonts/monoton.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Title Lobster';
     src: url('assets/fonts/lobster.woff2') format('woff2');
     font-display: swap;

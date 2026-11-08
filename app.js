@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '"Title Pacifico", sans-serif',
         '"Title Press Start 2P", sans-serif',
         '"Title UnifrakturMaguntia", sans-serif',
-        '"Title Monoton", sans-serif',
         '"Title Lobster", sans-serif',
         '"Title Space Mono", sans-serif',
         '"Title Playfair Display", sans-serif',
@@ -55,25 +54,38 @@ document.addEventListener('DOMContentLoaded', () => {
             if (char.trim()) letters.push(span);
         }
 
-        // Change one letter at a time, sweeping left to right.
-        let nextLetter = 0;
-        function changeNextLetter() {
-            const span = letters[nextLetter];
-            nextLetter = (nextLetter + 1) % letters.length;
+        function pickFont(previous) {
             let index;
             do index = Math.floor(Math.random() * fonts.length);
-            while (String(index) === span.dataset.font && fonts.length > 1);
+            while (String(index) === previous && fonts.length > 1);
+            return index;
+        }
+
+        function setFont(span, index) {
             span.dataset.font = index;
             span.style.fontFamily = fonts[index];
         }
 
         fonts.forEach(font => document.fonts && document.fonts.load(`56px ${font}`, 'LasuShin'));
 
-        letters.forEach(span => {
-            span.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
-        });
-
-        window.setInterval(changeNextLetter, 150);
+        if (Math.random() < 0.5) {
+            // Change one letter at a time, sweeping left to right.
+            letters.forEach(span => setFont(span, pickFont()));
+            let nextLetter = 0;
+            window.setInterval(() => {
+                const span = letters[nextLetter];
+                nextLetter = (nextLetter + 1) % letters.length;
+                setFont(span, pickFont(span.dataset.font));
+            }, 150);
+        } else {
+            // Change the whole name at once every so often.
+            const changeAll = () => {
+                const index = pickFont(letters[0].dataset.font);
+                letters.forEach(span => setFont(span, index));
+            };
+            changeAll();
+            window.setInterval(changeAll, 1600);
+        }
     }
 
     document.querySelectorAll('[data-current-year]').forEach(element => {
